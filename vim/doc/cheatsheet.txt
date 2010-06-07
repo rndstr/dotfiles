@@ -166,4 +166,8 @@ TAGS                                            *cs-tags*
 :he tags
 
 
+FOLD                                            *cs-fold*
+todo
+
+
  vim:tw=78:ts=8:ft=help:norl:
