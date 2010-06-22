@@ -166,12 +166,13 @@ TAGS                                            *cs-tags*
 :tselect /<pat> List only
 :he tags
 
+FOLD                                            *cs-fold*
+todo
 
 =============================================================================
 PLUGINS
 
 CSCOPE                                          *cs-cscope*
-
 ^\<key>         Display results in current window
 :cs find <key> <word>
 ^\\<key>        Display results in split window
@@ -190,4 +191,4 @@ KEY
 'd'   called:   find functions that function under cursor calls
 
 
-vim:tw=78:ts=8:ft=help:norl:
+ vim:tw=78:ts=8:ft=help:norl:
