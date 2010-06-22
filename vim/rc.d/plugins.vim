@@ -1,11 +1,16 @@
 " prolly should move this to ~/.vim/after/plugin/ ?
 
 """"""""""""""""""""""""
+" cscope
+set cscopeprg=/opt/local/bin/cscope
+
+
+""""""""""""""""""""""""
 " NERD_tree.vim
 " http://www.catonmat.net/blog/vim-plugins-nerdtree-vim/
 
-
 map <F8> :NERDTreeToggle<CR>
+
 
 
 """"""""""""""""""""""""
@@ -53,3 +58,6 @@ let g:DoxygenToolkit_licenseTag=g:DoxygenToolkit_licenseTag . "GNU General Publi
 let g:DoxygenToolkit_licenseTag=g:DoxygenToolkit_licenseTag . "You should have received a copy of the GNU General Public License\<enter>"
 let g:DoxygenToolkit_licenseTag=g:DoxygenToolkit_licenseTag . "along with this program; if not, write to the Free Software\<enter>"
 let g:DoxygenToolkit_licenseTag=g:DoxygenToolkit_licenseTag . "Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.\<enter>"
+
+
+

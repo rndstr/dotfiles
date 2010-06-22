@@ -1,3 +1,4 @@
+
 *cheatsheet.txt*        Cheatsheet for vim
 
 Author: Roland Schilter
@@ -166,4 +167,27 @@ TAGS                                            *cs-tags*
 :he tags
 
 
- vim:tw=78:ts=8:ft=help:norl:
+=============================================================================
+PLUGINS
+
+CSCOPE                                          *cs-cscope*
+
+^\<key>         Display results in current window
+:cs find <key> <word>
+^\\<key>        Display results in split window
+:scs find <key> <word>
+^\\\<key>       Display results in vertical split window
+:vert scs find <key> <word>
+
+KEY
+'s'   symbol:   find all references to the token under cursor
+'g'   global:   find global definition(s) of the token under cursor
+'c'   calls:    find all calls to the function name under cursor
+'t'   text:     find all instances of the text under cursor
+'e'   egrep:    egrep search for the word under cursor
+'f'   file:     open the filename under cursor
+'i'   includes: find files that include the filename under cursor
+'d'   called:   find functions that function under cursor calls
+
+
+vim:tw=78:ts=8:ft=help:norl:

@@ -1,0 +1,5 @@
+#!/bin/bash
+find $PWD -name '*.php' > ./cscope.files
+cscope -b -P $PWD/
+rm ./cscope.files
+
