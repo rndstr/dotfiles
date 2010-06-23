@@ -1,7 +1,7 @@
 *cheatsheet.txt*        Cheatsheet for vim
 
 Author: Roland Schilter
-Last change: 2010-06-01
+Last change: 2010-06-10
 
 SELECT                                          *cs-select*
 ^v  Blockmode
@@ -122,6 +122,9 @@ BUFFERS                                         *cs-buffers*
 :b<num>         Switch to bufer
 :bd[elete]      Unload
 :bw[ipeout]     Unload and delete
+
+TABS                                            *cs-tabs*
+:tabe #<buf>    Opens buffer in tab
 
 RECORDING                                       *cs-record*
 q<char>     Start recording into register
