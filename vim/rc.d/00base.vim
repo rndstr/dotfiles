@@ -24,6 +24,12 @@ set isk+=_,$,@,%,#,-
 set backup " create backups
 set backupdir=$HOME/.vim/backup " backup files location
 set directory=$HOME/.vim/swap " swap files location
+" change dirs when switching tabs/buffers
+if exists('+autochdir')
+    set autochdir
+else
+    autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
+endif
 
 """"""""""""""""""""""""""""
 " vim ui
@@ -43,7 +49,7 @@ set scrolloff=4 " keep cursor away from top/bottom
 
 set showmatch " show matching brackets
 set matchtime=5 " how many tenths of a second to blink matahcing brackets for
-set statusline=%F%m%r%h%w\ [%{&ff}]\ %y\ (a\%03.3b\ 0x\%02.2B)\ [%04l,%04v]\ %p%%\ (len\ %L)
+set statusline=%F%m%r%h%w\ [%{&ff}]\ %y\ %04l:%04v\ %=%p%%/%L\ [a\%03.3b,0x\%02.2B]
 set laststatus=2 " always show the status line
 " display cues :set list 
 set lcs=tab:>-,extends:$
