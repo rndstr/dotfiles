@@ -1,8 +1,6 @@
-
 *cheatsheet.txt*        Cheatsheet for vim
 
 Author: Roland Schilter
-Last change: 2010-06-10
 
 SELECT                                          *cs-select*
 ^v  Blockmode
@@ -167,6 +165,8 @@ TAGS                                            *cs-tags*
 ^w^]            Open new window
 :tag /<pat>     Jump to or list tags matching <pat>
 :tselect /<pat> List only
+:helptags ~/vim/doc     Update files
+
 :he tags
 
 FOLD                                            *cs-fold*
