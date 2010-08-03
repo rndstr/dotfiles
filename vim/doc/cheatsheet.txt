@@ -11,7 +11,7 @@ gv              Select previous visual area again
 [V] ^g          Switch between [V] and [S]
 [B] I/A/c<text><Esc>  Insert / append / change on every line
 
-TEXTOBJECTS                                     *cs-textobjs*
+TEXT OBJECTS                                    *cs-textobjs*
 Can be used after an operator or in Visual mode: <type><what>
 TYPE
 a       Ambient
@@ -21,9 +21,7 @@ w       word
 W       WORD
 s       sentence
 p       paragraph
-{       Whole {..} block or text inside it
-(       Whole (..) block or text inside it
-<       Whole <..> block or text inside it
+{ ( [   Enclosed by brackets
 '       Single-quoted string
 "       Double-quoted string
 t       Whole HTML/XML tag
@@ -33,6 +31,16 @@ Examples:
   yat   Copy entire closest tag (yit for text only)
   gUi'  Uppercase text inside string
   vip   Select paragraph in Visual mode
+  >ap   Indent whole paragraph
+ 
+Motions:
+( )     Move sentence back/fwd
+{ }     Paragraph
+]] [[   Sections fwd/back or to next/prev '{' in cur scope
+][ []   Sections fwd/back or to next/prev '}' in cur scope
+
+See [object-motions]
+See [text-objects]
 
 
 SEARCH                                          *cs-search*
@@ -66,14 +74,14 @@ COMPLETION                                      *cs-completion*
 [I] ^x          Start completion mode
 ^f              File name
 ^o              Omni (classes, vars, methods, context-based)
-:he ins-completion
+See [ins-completion]
 
 CURSOR                                          *cs-cursor*
 -               Previous line
 g;              Prev pos in change list
 g,              Next pos in change list
 gi              Go back to insert mode where you left it
-:he changelist
+See [changelist]
 
 
 BOOKMARKS                                       *cs-bookmarks*
@@ -99,7 +107,7 @@ m`        Set context mark explicitly
 
 
 (char a-z buffer local, A-Z global file)
-:he mark-motions
+See [mark-motions]
 
 WINDOWS                                         *cs-win*
 :new
@@ -109,11 +117,11 @@ WINDOWS                                         *cs-win*
 COMMANDS                                        *cs-cmd*
 .       Repeat last change
 @:      Repeat last command
-:he single-repeat
+See [single-repeat]
 
 :<range>g/<pat>/<cmd>   Run command on lines in <range> where <pat> matches
                         g! for negating <pat>
-:he multi-repeat
+See [multi-repeat]
 
 BUFFERS                                         *cs-buffers*
 :e <file>
@@ -131,7 +139,7 @@ q           Stop
 @<char>     Play
 @@          Play last recording
 :reg
-:he record
+See [record]
 
 REGISTERS                                       *cs-registers*
 :reg
@@ -165,9 +173,9 @@ TAGS                                            *cs-tags*
 ^w^]            Open new window
 :tag /<pat>     Jump to or list tags matching <pat>
 :tselect /<pat> List only
-:helptags ~/vim/doc     Update files
+:helptags ~/.vim/doc     Update files
 
-:he tags
+See [tags]
 
 FOLD                                            *cs-fold*
 todo
