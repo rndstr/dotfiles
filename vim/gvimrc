@@ -1,5 +1,5 @@
-set columns=185
-set lines=65
+set columns=205
+set lines=75
 colorscheme blackboard
 
 function! GuiTabLabel()

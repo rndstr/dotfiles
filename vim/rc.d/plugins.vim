@@ -22,6 +22,8 @@ let Tlist_File_Fold_Auto_Close = 1
 let Tlist_Process_File_Always = 1
 let Tlist_Enable_Fold_Column = 0
 let tlist_php_settings = 'php;c:class;d:constant;f:function'
+let Tlist_Sort_Type = 'name'
+let Tlist_Use_Right_Window = 1
 nmap <silent> <F7> :TlistToggle<CR>
 
 

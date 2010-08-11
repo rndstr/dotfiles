@@ -138,3 +138,7 @@ vmap <BS> x
 
 " piece-wise copying of line above current oen
 imap <C-L> @@@<Esc>hhkywjl?@@@<CR>P/@@@<CR>3s
+
+
+
+vmap ,px !xmllint --format -<CR>

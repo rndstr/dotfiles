@@ -103,9 +103,18 @@ m`        Set context mark explicitly
 (char a-z buffer local, A-Z global file)
 :he mark-motions
 
-WINDOWS                                         *cs-win*
-:new
-:sp
+VIEWPORT                                        *cs-viewport*
+:new            New horizontal split
+:sp [file]      Split current with [file] (or current)
+:<lines> sp [file]      New viewport has <lines>
+:vsp            Same as :sp but vertical
+
+^wq             Same as :q
+^ww             Move between viewports
+^w=             Balance viewport space
+^w[lines]+/-    Change size
+^wr/R           Rotate viewports
+^wn             Same as :sp
 
 
 COMMANDS                                        *cs-cmd*
@@ -144,6 +153,7 @@ REGISTERS                                       *cs-registers*
 ACTIONS                                         *cs-actions*
 U               Uppercase selected text
 D               Delete rest of the line
+J               Merge-append previous with current line
 
 MISC                                            *cs-misc*
 ^g / g^g        Where am I?
