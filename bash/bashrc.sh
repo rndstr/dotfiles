@@ -30,6 +30,8 @@ if [ $IS_LOGIN_SHELL = 'yes' ]; then
   export HISTTIMEFORMAT="[%F-%T] " # puts full date and time in history display.
   export HISTIGNORE="fg*:bg*:history*"
 
+  export XMLLINT_INDENT="    "
+
   export EDITOR="/usr/bin/vim -p"
 
   export PATH=${PATH}:${HOME}/.dotfiles/bin:${HOME}/bin
