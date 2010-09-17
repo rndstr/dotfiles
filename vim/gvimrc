@@ -2,6 +2,11 @@ set columns=205
 set lines=75
 colorscheme blackboard
 
+let os = substitute(system('uname'), "\n", "", "")
+if os == "Darwin"
+    set guifont=Menlo\ Regular:h12
+endif
+
 function! GuiTabLabel()
     " add the tab number
     let label = '['.tabpagenr()
