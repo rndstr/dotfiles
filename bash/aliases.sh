@@ -38,11 +38,11 @@ alias sl="screen -list"
 alias sr="screen -d -r"
 alias sx="screen -x"
 
-which colordiff >/dev/null && alias diff='colordiff'
+which colordiff >/dev/null 2>&1 && alias diff='colordiff'
 
 
 # --- processes ---
-which htop >/dev/null && alias top='htop'
+which htop >/dev/null 2>&1 && alias top='htop'
 export PS_FORMAT="pid,ppid,state,%cpu,%mem,euser:15,command"
 alias psg="ps -awef |grep"
 

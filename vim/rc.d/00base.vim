@@ -31,6 +31,7 @@ else
     autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
 endif
 
+
 """"""""""""""""""""""""""""
 " vim ui
 
@@ -129,8 +130,9 @@ map ,/ :s/^/\/\//<CR>
 map ,f [I:let nr = input("line: ")<Bar>exe"normal ".nr."[\t"<CR>
 
 " paste and reformat/reindent
-nnoremap <Esc>P P'[v']=
-nnoremap <Esc>p p'[v']=
+" this seems to do paste stuff whenever i open a file on certain machines
+"nnoremap <Esc>P P'[v']=
+"nnoremap <Esc>p p'[v']=
 
 nmap X ci'
 " backspace deletes in edit mode
