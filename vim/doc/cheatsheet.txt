@@ -123,6 +123,12 @@ VIEWPORT                                        *cs-viewport*
 ^wn             Same as :sp
 
 
+SCROLLING
+H/M/L   Move to top/mid/bottom
+^f ^b ^u ^d ^e ^y
+
+See [scrolling]
+
 COMMANDS                                        *cs-cmd*
 .       Repeat last change
 @:      Repeat last command

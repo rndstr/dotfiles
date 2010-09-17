@@ -57,7 +57,7 @@ alias amplayer="mplayer -nosound"
 alias cmplayer="mplayer -cache 5000"
 alias pmplayer="mplayer -playlist"
 # ffmpeg deinterlace
-alias dmplayer="mplayer -vf pp=fd"
+alias dmplayer="mplayer -vf yadif=1"
 
 # play on second screen
 alias mplayer1="mplayer -xineramascreen 1 -monitoraspect 4:3"

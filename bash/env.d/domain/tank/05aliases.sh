@@ -24,7 +24,6 @@ fi
 alias fmp3="cat /pub/mp3/.mp3listing | grep -i"
 function fmovie() {
   cat /pub/.movielisting* | grep -i $*
-  lsre -ld /09movie 0 -ld /09movie/ARCHIVE/ 1 | grep -i $*
   lsre -ld /0Amovie 0 -ld /0Amovie/ARCHIVE/ 1 | grep -i $*
 }
 
