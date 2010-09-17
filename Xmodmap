@@ -15,11 +15,11 @@ keycode 108 = Mode_switch
 
 !
 keycode 26 = e E EuroSign
-! copyright
+! c ©
 keycode 54 = c C copyright
-! ^2
+! 2 ²
 keycode 11 = 2 at twosuperior
-! ^3
+! 3 ³
 keycode 12 = 3 numbersign threesuperior
 ! +-
 keycode  86 = KP_Add XF86_Next_VMode plusminus
@@ -29,15 +29,17 @@ keycode  27 = r R registered
 keycode  33 = p P paragraph
 ! micro µ
 keycode  58 = m M mu
-! multiplication sign (&times;)
-keycode 53 = x X 215
+! &times; ×
+keycode 53 = x X multiply
 ! umlauts
 keycode 47 = semicolon colon odiaeresis
 keycode 48 = quoteright quotedbl adiaeresis
 keycode 34 = bracketleft braceleft udiaeresis
-! AltGr+1 = degree
+! \ …
+keycode 51 = backslash bar ellipsis
+! 1 °
 keycode 10 = 1 exclam degree
-! AltGr+<|> = «»
+! <> «»
 keycode 59 = comma less guillemotleft
 keycode 60 = period greater guillemotright
 
