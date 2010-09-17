@@ -1,0 +1,74 @@
+! - use decimal ascii value from: http://andrew.triumf.ca/iso8859-1-compose.html
+! - then load (xmodmap ~/.Xmodmap)
+! - xmodmap -pke to get the name :)
+
+! swap ctrl and capslock
+remove lock = Caps_Lock
+remove control = Control_L
+!keysym Control_L = Caps_Lock
+keysym Caps_Lock = Control_L
+add lock = Caps_Lock
+add control = Control_L
+
+! AltGr for switching (3rd col in remapping)
+keycode 108 = Mode_switch
+
+!
+keycode 26 = e E EuroSign
+! copyright
+keycode 54 = c C copyright
+! ^2
+keycode 11 = 2 at twosuperior
+! ^3
+keycode 12 = 3 numbersign threesuperior
+! +-
+keycode  86 = KP_Add XF86_Next_VMode plusminus
+! registered ®
+keycode  27 = r R registered
+! pilcrow ¶
+keycode  33 = p P paragraph
+! micro µ
+keycode  58 = m M mu
+! multiplication sign (&times;)
+keycode 53 = x X 215
+! umlauts
+keycode 47 = semicolon colon odiaeresis
+keycode 48 = quoteright quotedbl adiaeresis
+keycode 34 = bracketleft braceleft udiaeresis
+! AltGr+1 = degree
+keycode 10 = 1 exclam degree
+! AltGr+<|> = «»
+keycode 59 = comma less guillemotleft
+keycode 60 = period greater guillemotright
+
+! inverted question mark
+keycode 61 = slash question 191
+
+
+
+keycode 179 = XF86AudioMedia
+keycode 172 = XF86AudioPlay
+keycode 121 = XF86AudioMute
+keycode 122 = XF86AudioLowerVolume
+keycode 123 = XF86AudioRaiseVolume
+keycode 180 = XF86Go
+
+! set key between <leftshift> and <z> to Escape
+keycode 94 = Escape
+keycode 9 = semicolon
+
+! fix back
+!keycode 9 = Escape
+!keycode 94 = less
+
+! bind esc
+!keycode 9 = Scroll_Lock
+!keycode 94 = Escape
+
+
+
+! switch backslash and less
+!keysym less = backslash
+
+! disable button 6/7 (fu logitech marathon)
+pointer = 1 2 3 4 5 0 0

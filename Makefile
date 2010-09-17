@@ -5,7 +5,7 @@ BASH_FILES := $(shell find bash/ -type f)
 VIM_FILES := $(shell find vim/rc.d/ -type f)
 
 # Further dotfiles. If filename-HOSTNAME exists it takes precedence over default.
-SINGLE_FILES = gitconfig screenrc dir_colors
+SINGLE_FILES = gitconfig screenrc dir_colors Xmodmap
 
 
 # will be backed up
