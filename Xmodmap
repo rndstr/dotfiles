@@ -1,6 +1,7 @@
 ! - use decimal ascii value from: http://andrew.triumf.ca/iso8859-1-compose.html
 ! - then load (xmodmap ~/.Xmodmap)
-! - xmodmap -pke to get the name :)
+! xmodmap -pke
+! xmodmap -pm
 
 ! swap ctrl and capslock
 remove lock = Caps_Lock
@@ -9,6 +10,9 @@ remove control = Control_L
 keysym Caps_Lock = Control_L
 add lock = Caps_Lock
 add control = Control_L
+
+
+
 
 ! AltGr for switching (3rd col in remapping)
 keycode 108 = Mode_switch
@@ -57,20 +61,4 @@ keycode 180 = XF86Go
 
 ! set key between <leftshift> and <z> to Escape
 keycode 94 = Escape
-keycode 9 = semicolon
-
-! fix back
-!keycode 9 = Escape
-!keycode 94 = less
-
-! bind esc
-!keycode 9 = Scroll_Lock
-!keycode 94 = Escape
-
-
-
-! switch backslash and less
-!keysym less = backslash
-
-! disable button 6/7 (fu logitech marathon)
-pointer = 1 2 3 4 5 0 0
+!keycode 9 = semicolon

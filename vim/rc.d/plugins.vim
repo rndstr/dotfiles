@@ -15,7 +15,7 @@ map <F8> :NERDTreeToggle<CR>
 
 """"""""""""""""""""""""
 " taglist.vim
-let Tlist_Ctags_Cmd = "/usr/bin/exuberant-ctags"
+let Tlist_Ctags_Cmd = "/usr/bin/ctags"
 let Tlist_Inc_Winwidth = 1
 let Tlist_Exit_OnlyWindow = 1
 let Tlist_File_Fold_Auto_Close = 1
