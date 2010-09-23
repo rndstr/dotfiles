@@ -2,7 +2,7 @@
 
 """"""""""""""""""""""""
 " cscope
-set cscopeprg=/opt/local/bin/cscope
+set cscopeprg=/usr/bin/cscope
 
 
 """"""""""""""""""""""""

@@ -5,6 +5,8 @@ colorscheme blackboard
 let os = substitute(system('uname'), "\n", "", "")
 if os == "Darwin"
     set guifont=Menlo\ Regular:h12
+else
+    set guifont=DejaVu\ Sans\ Mono\ 8
 endif
 
 function! GuiTabLabel()
