@@ -3,4 +3,4 @@
 export DOTFILES_ENV_DIST='archlinux'
 export DOTFILES_ENV_DOMAIN='liip'
 export DOTFILES_ENV_TYPE='desktop'
-source ~/.profile
+[ -f ~/.profile ] && source ~/.profile
