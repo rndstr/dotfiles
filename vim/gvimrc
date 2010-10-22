@@ -1,13 +1,14 @@
-set columns=205
-set lines=75
-colorscheme blackboard
 
 let os = substitute(system('uname'), "\n", "", "")
 if os == "Darwin"
     set guifont=Menlo\ Regular:h12
 else
-    set guifont=DejaVu\ Sans\ Mono\ 8
+    set guifont=DejaVu\ Sans\ Mono\ 10
 endif
+
+set columns=175
+set lines=70
+colorscheme blackboard
 
 function! GuiTabLabel()
     " add the tab number
