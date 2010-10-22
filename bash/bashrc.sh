@@ -34,7 +34,7 @@ if [ $IS_LOGIN_SHELL = 'yes' ]; then
 
   export EDITOR="/usr/bin/vim -p"
 
-  export PATH=${PATH}:${HOME}/.dotfiles/bin:${HOME}/bin
+  export PATH=${PATH}:/usr/local/bin:${HOME}/.dotfiles/bin:${HOME}/bin
 
   # Will be non-empty if shad is available
   export SHAD_HOME=""

@@ -1,6 +1,12 @@
 # Usage: <videofile>
 mplayerscreenies () {
-  (for i in $(seq 1 7 100); do echo -e "seek $i 1\nscreenshot 0\n"; done; echo "quit") | \
-  mplayer -quiet -slave -vf screenshot "$1"
+    for f in $*; do
+        suffix=${f%.*}.png
+        for i in $(seq 1 6); do
+            mplayer -nosound -ss $i -vf screenshot -frames 1 -vo png:z=9 $f
+            padding=$(printf %03d ${i})
+            mv 00000001.png $padding-$suffix
+        done
+    done
 }
 
