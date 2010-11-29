@@ -54,3 +54,7 @@ if has("gui_running")
   "Rails Colors
   highlight link railsMethod Type
 end
+highlight extraWhitespace ctermbg=5 guibg=darkgreen
+match extraWhitespace /\t/
+highlight lineLength guifg=#ffeeee
+match lineLength '\%>10v.\+'
