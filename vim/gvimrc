@@ -1,9 +1,14 @@
 
 let os = substitute(system('uname'), "\n", "", "")
+let hostname = substitute(system('hostname'), "\n", "", "")
 if os == "Darwin"
     set guifont=Menlo\ Regular:h12
 else
-    set guifont=DejaVu\ Sans\ Mono\ 10
+    if hostname == "irukandji"
+        set guifont=DejaVu\ Sans\ Mono\ 8
+    else
+        set guifont=DejaVu\ Sans\ Mono\ 10
+    endif
 endif
 
 set columns=175

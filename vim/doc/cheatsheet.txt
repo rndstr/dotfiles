@@ -55,12 +55,15 @@ n/N             Next/previous search
 &               Repeat last substitution on current line
 :&&             Repeat it with flags
 g&              Repeat substition globally
+FLAGS
+n               Print occurrencies of pattern (count)
 
 Examples:
   df;           Delete text from cursor to first ;
   cT$           Change text from cursor up to the first $ to the left
   d/^#          Delete everything up to the next comment
   y/^class/;?function   Copy everything to the first function before first class
+  :%s/Query/gn  Print number of matches of `Query'
 
 RANGE                                           *cs-range*
 <from>,<to>     Patterns, line numbers, etc
