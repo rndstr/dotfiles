@@ -12,6 +12,7 @@ let g:gist_browser_command = 'opera %URL% &'
 
 """"""""""""""""""""""""
 " gundo
+map <F9> :GundoToggle<CR>
 let g:gundo_width = 72
 let g:gundo_preview_height = 27
 
