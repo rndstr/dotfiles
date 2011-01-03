@@ -1,3 +1,4 @@
+call pathogen#runtime_append_all_bundles()
 for additive in split(globpath('~/.vim/rc.d', '*.vim'), "\n")
   exe "source ".additive
 endfor
