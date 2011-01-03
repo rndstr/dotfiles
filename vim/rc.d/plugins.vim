@@ -1,5 +1,20 @@
 " prolly should move this to ~/.vim/after/plugin/ ?
 
+command! JSLint !js ~/.dotfiles/bin/js/jslint "`cat %`" | sed -e 's/<div>/<div>\&nbsp;/g' | lynx -dump -stdin
+
+
+"""""""""""""""""""""""""""
+" gist
+let g:gist_clip_command = 'xclip -sel clip'
+let g:gist_detect_filetype = 1
+let g:gist_browser_command = 'opera %URL% &'
+
+
+""""""""""""""""""""""""
+" gundo
+let g:gundo_right = 1
+
+
 """"""""""""""""""""""""
 " cscope
 set cscopeprg=/usr/bin/cscope
