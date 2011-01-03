@@ -12,7 +12,8 @@ let g:gist_browser_command = 'opera %URL% &'
 
 """"""""""""""""""""""""
 " gundo
-let g:gundo_right = 1
+let g:gundo_width = 72
+let g:gundo_preview_height = 27
 
 
 """"""""""""""""""""""""
