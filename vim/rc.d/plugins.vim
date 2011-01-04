@@ -4,6 +4,10 @@ command! JSLint !js ~/.dotfiles/bin/jslint "`cat %`" | sed -e 's/<div>/<div>\&nb
 
 
 """""""""""""""""""""""""""
+" fuzzyfinder
+let g:fuf_file_exclude = '\v\~$|\.(o|exe|dll|bak|orig|sw[po])$|(^|[/\\])\.(hg|git|bzr|svn)($|[/\\])'
+
+"""""""""""""""""""""""""""
 " gist
 let g:gist_clip_command = 'xclip -sel clip'
 let g:gist_detect_filetype = 1

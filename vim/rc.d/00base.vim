@@ -98,6 +98,7 @@ let g:winManagerWindowLayout = 'FileExplorer,TagsExplorer|BufExplorer'
 nmap ,s :source ~/.vimrc<CR>
 nmap ,g :source ~/.vimrc<CR>:source ~/.gvimrc<CR>
 nmap ,v :tabnew ~/.vimrc<CR>
+nmap ,d :FufFile<CR>
 
 " remap code completion to Ctrl+Space {{{2
 if has("gui")
@@ -128,6 +129,7 @@ map ,/ :s/^/\/\//<CR>
 
 " list lines with word under cursor and jump
 map ,f [I:let nr = input("line: ")<Bar>exe"normal ".nr."[\t"<CR>
+
 
 " paste and reformat/reindent
 " this seems to do paste stuff whenever i open a file on certain machines
