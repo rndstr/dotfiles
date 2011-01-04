@@ -98,7 +98,18 @@ let g:winManagerWindowLayout = 'FileExplorer,TagsExplorer|BufExplorer'
 nmap ,s :source ~/.vimrc<CR>
 nmap ,g :source ~/.vimrc<CR>:source ~/.gvimrc<CR>
 nmap ,v :tabnew ~/.vimrc<CR>
-nmap ,d :FufFile<CR>
+nmap ,ff :FufFile<CR>
+nmap ,fc :FufCoverageFile<CR>
+nmap ,fl :FufLine<CR>
+nmap ,fh :FufHelp<CR>
+nmap ,fb :FufBufferTag<CR>
+vmap ,px !xmllint --format -<CR>
+
+" uncommenting lines
+map ,/ :s/^/\/\//<CR>
+
+" list lines with word under cursor and jump
+map ,f [I:let nr = input("line: ")<Bar>exe"normal ".nr."[\t"<CR>
 
 " remap code completion to Ctrl+Space {{{2
 if has("gui")
@@ -123,13 +134,6 @@ endfunction
 
 nnoremap <silent> <C-i> <Esc>:call ToggleShiftwidth()<CR>
 
-""""""""""""""
-" uncommenting lines
-map ,/ :s/^/\/\//<CR>
-
-" list lines with word under cursor and jump
-map ,f [I:let nr = input("line: ")<Bar>exe"normal ".nr."[\t"<CR>
-
 
 " paste and reformat/reindent
 " this seems to do paste stuff whenever i open a file on certain machines
@@ -145,4 +149,3 @@ imap <C-L> @@@<Esc>hhkywjl?@@@<CR>P/@@@<CR>3s
 
 
 
-vmap ,px !xmllint --format -<CR>

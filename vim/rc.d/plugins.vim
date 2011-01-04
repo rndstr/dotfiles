@@ -5,7 +5,15 @@ command! JSLint !js ~/.dotfiles/bin/jslint "`cat %`" | sed -e 's/<div>/<div>\&nb
 
 """""""""""""""""""""""""""
 " fuzzyfinder
-let g:fuf_file_exclude = '\v\~$|\.(o|exe|dll|bak|orig|sw[po])$|(^|[/\\])\.(hg|git|bzr|svn)($|[/\\])'
+let g:fuf_file_exclude = '\v\(~|-)$|\.(o|exe|dll|bak|orig|sw[po])$|(^|[/\\])\.(hg|git|bzr|svn)($|[/\\])'
+let g:fuf_coveragefile_exclude = '\v\(~|-)$|\.(o|exe|dll|bak|orig|sw[po])$|(^|[/\\])\.(hg|git|bzr|svn)($|[/\\])'
+let g:fuf_coveragefile_globPatterns = ['~/**/.*', '~/**/*']
+let g:fuf_dir_exclude = '\v(^|[/\\])\.(hg|git|bzr|svn)($|[/\\])'
+
+let g:fuf_keyOpen = '<C-l'
+let g:fuf_keyOpenTabpage = '<CR>'
+let g:fuf_keyPrevMode = '<C-e>'
+let g:fuf_keyNextMode = '<C-r>'
 
 """""""""""""""""""""""""""
 " gist
