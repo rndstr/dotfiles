@@ -13,7 +13,7 @@ endif
 
 set columns=175
 set lines=70
-colorscheme blackboard
+colorscheme rndstr
 
 function! GuiTabLabel()
     " add the tab number
