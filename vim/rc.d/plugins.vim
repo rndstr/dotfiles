@@ -1,6 +1,6 @@
 " prolly should move this to ~/.vim/after/plugin/ ?
 
-command! JSLint !js ~/.dotfiles/bin/js/jslint "`cat %`" | sed -e 's/<div>/<div>\&nbsp;/g' | lynx -dump -stdin
+command! JSLint !js ~/.dotfiles/bin/jslint "`cat %`" | sed -e 's/<div>/<div>\&nbsp;/g' | lynx -dump -stdin
 
 
 """""""""""""""""""""""""""
