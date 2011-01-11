@@ -80,6 +80,8 @@ set nowrap " no wrapping of lines
 """"""""""""""""""""""""""""
 " apps
 set grepprg=grep\ -nH\ $*
+" unset so K defaults to :help (man otherwise)
+set keywordprg=
  
 
 """""""""""""""""""""""""""""
@@ -104,6 +106,8 @@ nmap ,fl :FufLine<CR>
 nmap ,fh :FufHelp<CR>
 nmap ,fb :FufBufferTag<CR>
 vmap ,px !xmllint --format -<CR>
+
+nmap ,wp !opera http://php.net/<cword><CR>
 
 " uncommenting lines
 map ,/ :s/^/\/\//<CR>

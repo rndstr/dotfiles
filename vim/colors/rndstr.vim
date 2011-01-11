@@ -14,7 +14,7 @@ if exists("syntax_on")
    syntax reset
 endif
 
-let g:colors_name = "blackboard"
+let g:colors_name = "rndstr"
 
 if has("gui_running")
 "  hi TabLine cterm=none ctermfg=0 ctermbg=7

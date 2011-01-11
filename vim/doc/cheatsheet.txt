@@ -11,6 +11,7 @@ gv              Select previous visual area again
 [V] ^g          Switch between [V] and [S]
 [B] I/A/c<text><Esc>  Insert / append / change on every line
 
+
 TEXT OBJECTS                                    *cs-textobjs*
 Can be used after an operator or in Visual mode: <type><what>
 TYPE
@@ -80,7 +81,7 @@ COMPLETION                                      *cs-completion*
 See [ins-completion]
 
 CURSOR                                          *cs-cursor*
--               Previous line
+- / <CR>        First non-blank char on previous/next line
 g;              Prev pos in change list
 g,              Next pos in change list
 gi              Go back to insert mode where you left it
@@ -172,6 +173,14 @@ ACTIONS                                         *cs-actions*
 U               Uppercase selected text
 D               Delete rest of the line
 J               Merge-append previous with current line
+
+INSERTS                                         *cs-insert*
+ (while in Insert mode)
+^r=<expr>   Calculator
+^a          Insert previously inserted text
+^y / ^e     Insert chars from above/below cursor
+            (also see *^l)
+^t / ^d     Inserts/removes one indent at start of line
 
 MISC                                            *cs-misc*
 ^g / g^g        Where am I?
