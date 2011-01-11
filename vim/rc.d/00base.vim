@@ -153,3 +153,8 @@ imap <C-L> @@@<Esc>hhkywjl?@@@<CR>P/@@@<CR>3s
 
 
 
+"" vimdiff for git
+" get local chunk and move to next 
+nmap <C-left> :diffget 1<CR>]c
+" get remote chunk and move to next
+nmap <C-right> :diffget 3<CR>]c

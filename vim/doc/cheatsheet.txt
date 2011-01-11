@@ -205,6 +205,12 @@ TAGS                                            *cs-tags*
 
 See [tags]
 
+DIFF                                            *cs-diff*
+do      Get changes from other window into current
+dp      Put changes from current window into other
+]c      Jump to next change
+[c      Jump to previous change
+
 FOLD                                            *cs-fold*
 todo
 
