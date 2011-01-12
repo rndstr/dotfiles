@@ -27,6 +27,7 @@ alias rm="rm -i"
 alias vi='vim -X -p'
 alias vim='vim -X -p'
 alias svnd="svn diff | less"
+alias gvimdiff="gvimdiff -S ~/.vim/gvimdiffrc"
 
 
 # set $HOME of target user

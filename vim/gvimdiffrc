@@ -1,0 +1,4 @@
+let loadedPHPLint = 1
+winpos 1650 40
+set columns=225
+set lines=66
