@@ -141,6 +141,7 @@ map ,dc :python debugger_context()<cr>
 map ,dp :python debugger_property()<cr>
 map ,dwc :python debugger_watch_input("context_get")<cr>A<cr>
 map ,dwp :python debugger_watch_input("property_get", '<cword>')<cr>A<cr>
+map ,db :python debugger_mark('<args>')<cr>
 
 hi DbgCurrent term=reverse ctermfg=White ctermbg=Red gui=reverse
 hi DbgBreakPt term=reverse ctermfg=White ctermbg=Green gui=reverse
