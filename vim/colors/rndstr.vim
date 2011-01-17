@@ -67,5 +67,3 @@ match extraWhitespace /\t/
 
 highlight debugCode ctermbg=5 guifg=#000000 guibg=#f648af
 
-"highlight lineLength guifg=#e7ef6e
-"match lineLength '\%>110v.\+'
