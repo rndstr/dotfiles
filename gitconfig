@@ -13,12 +13,15 @@
   status = auto
   branch = auto
 [alias]
-  a = commit -a
+  a = commit --all
+  ap = add --patch
   co = checkout
-  p = push
-  pr = push --rebase
+  pr = pull --rebase
+  br = branch
+  ci = commit
   s = status
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   lp = log -p
   d = diff
+  sm = submodule
   unstage = reset HEAD --
