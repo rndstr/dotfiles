@@ -10,8 +10,10 @@ ps_scm_f() {
         local repo=?
         if [[ $url = *trunk* ]]; then
             repo=trunk
-        elif [[ $url = *branches* || $url = *tags* ]]; then
-            repo=$(echo $url |  sed -n -e '/.*\/\(branches\|tags\)\/\(.*\)\/.*/ s//\1/p')
+        elif [[ $url = *branches* ]]; then
+            repo=%${url##*branches/}
+        elif [[ $url = *tags* ]]; then
+            repo=+${url##*tags/}
         fi
 
         s="r$r$(svn status | grep -q -v '^?' && echo -n "*" )@$repo"
