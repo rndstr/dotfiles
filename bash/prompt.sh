@@ -9,7 +9,13 @@ ps_scm_f() {
         #r=$(echo -e "$info" | sed -n -e '/Revision: \([0-9]*\).*/s//\1/p' )
         #url=$(echo -e "$info" | sed -n -e '/URL: \(.*\)/ s//\1/p')
 
-        info=$(cat .svn/entries)
+        # get topmost .svn path
+        rootdir=$PWD
+        while [ -d $(dirname $rootdir)/.svn ]; do
+            rootdir=$(dirname $rootdir)
+        done
+
+        info=$(cat $rootdir/.svn/entries)
         r=$(echo -e "$info" | head -n 11 | tail -n 1)
         url=$(echo -e "$info" | head -n 5 | tail -n 1)
 
