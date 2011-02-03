@@ -4,19 +4,29 @@ ps_scm_f() {
         return
     fi
     if [[ -d ".svn" ]] ; then
-        local info=$(svn info)
-        local r=$(echo -e "$info" | sed -n -e '/Revision: \([0-9]*\).*/s//\1/p' )
-        local url=$(echo -e "$info" | sed -n -e '/URL: \(.*\)/ s//\1/p')
-        local repo=?
+        local info= r= url= repo=?
+        #info=$(svn info)
+        #r=$(echo -e "$info" | sed -n -e '/Revision: \([0-9]*\).*/s//\1/p' )
+        #url=$(echo -e "$info" | sed -n -e '/URL: \(.*\)/ s//\1/p')
+
+        info=$(cat .svn/entries)
+        r=$(echo -e "$info" | head -n 11 | tail -n 1)
+        url=$(echo -e "$info" | head -n 5 | tail -n 1)
+
         if [[ $url = *trunk* ]]; then
             repo=trunk
         elif [[ $url = *branches* ]]; then
-            repo=%${url##*branches/}
+            url=${url##*branches/}
+            url=${url%%/*}
+            repo=%$url
         elif [[ $url = *tags* ]]; then
-            repo=+${url##*tags/}
+            url=${url##*tags/}
+            url=${url%%/*}
+            repo=+$url
         fi
 
-        s="r$r$(svn status | grep -q -v '^?' && echo -n "*" )@$repo"
+        #s="r$r$(svn status | grep -q -v '^?' && echo -n "*" )@$repo"
+        s="r$r@$repo"
     else
         local d=$(git rev-parse --git-dir 2>/dev/null ) b= r= a=
         if [[ -n "${d}" ]] ; then
