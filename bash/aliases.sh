@@ -24,7 +24,7 @@ alias hclear='history -c; clear'
 alias cp="cp -i"
 alias mv="mv -i"
 alias rm="rm -i"
-alias vi='vi -X -p'
+alias vi='vim -X -p'
 alias svnd="svn diff | less"
 alias gvimdiff="gvimdiff -S ~/.vim/gvimdiffrc"
 
