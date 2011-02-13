@@ -11,7 +11,7 @@
 
 # You can copy this file to .dir_colors in your $HOME directory to override
 # the system defaults.
-
+#
 # Below, there should be one TERM entry for each termtype that is colorizable
 TERM Eterm
 TERM ansi
@@ -42,15 +42,20 @@ TERM mach-color
 TERM mlterm
 TERM putty
 TERM rxvt
+TERM rxvt-256color
 TERM rxvt-cygwin
 TERM rxvt-cygwin-native
 TERM rxvt-unicode
+TERM rxvt-unicode-256color
+TERM rxvt-unicode256
 TERM screen
 TERM screen-256color
 TERM screen-256color-bce
 TERM screen-bce
 TERM screen-w
+TERM screen.rxvt
 TERM screen.linux
+TERM terminator
 TERM vt100
 TERM xterm
 TERM xterm-16color
@@ -120,6 +125,7 @@ EXEC 01;32
 .Z   01;31
 .dz  01;31
 .gz  01;31
+.lz  01;31
 .xz  01;31
 .bz2 01;31
 .bz  01;31
