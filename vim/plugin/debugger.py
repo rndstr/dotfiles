@@ -414,9 +414,9 @@ class HelpWindow(VimWindow):
     self.write(                                                          \
         '[ Function Keys ]                 |                       \n' + \
         '  ,ds    resize                   | [ Normal Mode ]       \n' + \
-        '  <F10>  step into                |   ,de  eval           \n' + \
+        '  <F10>  step out                 |   ,de  eval           \n' + \
         '  <F11>  step over                |                       \n' + \
-        '  <F12>  step out                 |                       \n' + \
+        '  <F12>  step into                |                       \n' + \
         '  ,dr    run                      | [ Command Mode ]      \n' + \
         '  ,dq    quit debugging           | ,db toggle breakpoint \n' + \
         '                                  | :Up stack up          \n' + \

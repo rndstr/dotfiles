@@ -127,9 +127,9 @@ else
   call confirm('debugger.vim: Unable to find debugger.py. Place it in either your home vim directory or in the Vim runtime directory.', 'OK')
 endif
 
-map <F10> :python debugger_command('step_into')<cr>
+map <F10> :python debugger_command('step_out')<cr>
 map <F11> :python debugger_command('step_over')<cr>
-map <F12> :python debugger_command('step_out')<cr>
+map <F12> :python debugger_command('step_into')<cr>
 
 nnoremap ,de :python debugger_watch_input("eval")<cr>A
 
