@@ -36,8 +36,8 @@ function mkcd() {
 
 function mknow() { 
   dirname=$(date +%Y%m%d)
-  [ -n "$@" ] && dirname=${dirname}
-  mkdir $dirname
+  [ -n "$1" ] && dirname=$1-$dirname
+  mkdir -p $dirname
 }
 
 
