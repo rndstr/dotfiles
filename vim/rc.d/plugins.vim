@@ -18,6 +18,13 @@ let g:user_zen_settings = {
 
 
 """""""""""""""""""""""""""
+" indent-guides
+if has("gui_running")
+  let g:indent_guides_enable_on_vim_startup = 1
+endif
+
+
+"""""""""""""""""""""""""""
 " fuzzyfinder
 let g:fuf_file_exclude = '\v\(~|-)$|\.(o|exe|dll|bak|orig|sw[po])$|(^|[/\\])\.(hg|git|bzr|svn)($|[/\\])'
 let g:fuf_coveragefile_exclude = '\v\(~|-)$|\.(o|exe|dll|bak|orig|sw[po])$|(^|[/\\])\.(hg|git|bzr|svn)($|[/\\])'
