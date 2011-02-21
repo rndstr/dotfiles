@@ -43,6 +43,9 @@ set lz " lazyredraw, do not redrawy while running macros
 set backspace=2 " make backspace work normal
 set showcmd
 set scrolloff=4 " keep cursor away from top/bottom
+if has("gui_running")
+  set cursorline
+endif
 
 
 """""""""""""""""""""""""""""
