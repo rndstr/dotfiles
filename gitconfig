@@ -25,3 +25,5 @@
   d = diff
   sm = submodule
   unstage = reset HEAD --
+  pu = !"git fetch -v origin; git fetch -v upstream; git merge upstream/master"
+  pur = !"git fetch -v origin; git fetch -v upstream; git rebase upstream/master"
