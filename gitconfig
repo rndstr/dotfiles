@@ -17,7 +17,7 @@
   ap = add --patch
   co = checkout
   pr = pull --rebase
-  br = branch
+  br = branch -va
   ci = commit
   s = status
   lg = log --graph --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
@@ -25,3 +25,5 @@
   d = diff
   sm = submodule
   unstage = reset HEAD --
+  pu = !"git fetch -v origin; git fetch -v upstream; git merge upstream/master"
+  pur = !"git fetch -v origin; git fetch -v upstream; git rebase upstream/master"

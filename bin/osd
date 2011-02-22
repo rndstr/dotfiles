@@ -1,0 +1,73 @@
+#!/bin/bash
+#
+# osd [type] <args>
+#
+if [ -e ~/.state/needscreen ]; then
+  exit 0
+fi
+
+text=""
+args=""
+
+
+case "$1" in
+  volumebar|volume)
+    desc=""
+    device="$2"
+    if [ "$device" = "Vol" ]; then
+      desc=""
+    fi
+    if [ "$device" = "Pcm" ]; then
+      desc="PCM"
+    fi;
+    percent="`smixer -p | sed -n '/'$device' /{s/.* \d*//g;s/%//;p}'`"
+    if [ "$1" = "volumebar" ]; then
+      args="-a 0 -c #55ff55 -f -*-verdana-medium-r-*-*-20-*-*-*-*-*-*-* -o 200 -p bottom -A left -i 20 -d 2 -b percentage -P $percent -T $desc-Volume"
+    else
+      if [ "$percent" = "0" ]; then
+        percent="mute"
+      else
+        percent="${percent}%"
+      fi
+      text="${percent} ${desc}"
+      args="-s 5 -c #ffffff  -f -*-verdana-bold-r-*-*-92-*-*-*-*-*-*-* -o -450 -p bottom -d 2 -A left"
+    fi
+    pkill osd_cat
+    ;;
+  irssi)
+    shift
+    text="$*"
+    args="-c #cfcba3  -f -*-verdana-bold-r-*-*-48-*-*-*-*-*-*-* -o 300 -p bottom -A left -i 100 -d 3"
+    ;;
+  date)
+    text="`date`"
+    args="-c #55ff55  -f -*-verdana-bold-r-*-*-56-*-*-*-*-*-*-* -o 20 -p bottom -A left"
+    ;;
+  short)
+    shift
+    text="$*"
+    args="-c #55ff55  -f -*-verdana-medium-r-*-*-20-*-*-*-*-*-*-* -o 20 -p bottom -A left -d 2"
+    ;;
+  lirc)
+    shift
+    text="$*"
+    args="-c #ffeeee  -f -*-verdana-bold-r-*-*-48-*-*-*-*-*-*-* -p bottom -o -200 -A left -i 100 -d 2 --outline 5"
+    ;;
+  lirc2)
+    shift
+    text="$*"
+    args="-c #ffbbbb  -f -*-verdana-bold-r-*-*-48-*-*-*-*-*-*-* -p bottom -o -250 -A left -i 100 -d 2 --outline 5"
+    ;;
+  lirc3)
+    shift
+    text="$*"
+    args="-c #ff0000  -f -*-verdana-bold-r-*-*-64-*-*-*-*-*-*-* -o 250 -p bottom -A left"
+    ;;
+  *)
+    text="$*"
+    args="-c #55ff55 -f -*-verdana-bold-r-*-*-32-*-*-*-*-*-*-* -o 20 -p bottom -A left"
+    ;;
+esac
+
+echo $text | osd_cat $args &> /dev/null
+

@@ -1,0 +1,55 @@
+#!/bin/bash
+#
+# USAGE
+#   ./volume <device> [toggle <def>|+|-|<num>] [osd]
+#
+#   <device>              Returns the volume on device
+#   <device> toggle 70    Set to 70% if it's 0 otherwise mute
+#   <device> +            Increase by 5%
+#   <device> -            Decrease by 5%
+#   <device> 50           Set to 50%
+
+print_usage () {
+  echo "USAGE: $(basename $0) <device> [toggle <def>|+|-|<num>]"
+}
+
+# $device
+get_volume () {
+  _RET=$(smixer -p | sed -n '/'Vol' /{s/.* \d*//g;s/%//;p}')
+  _RET=${_RET%\%}
+}
+
+set_volume () {
+  echo "vol $1 $2" | smixer -f -
+}
+
+if [ $# -eq 0 ]; then
+  print_usage
+  exit
+fi
+
+if [ $# -eq 1 ]; then
+  get_volume $1
+  echo $_RET
+  exit
+fi
+
+device=$1
+
+case "$2" in
+  toggle) 
+    [ $# -lt 3 ] && print_usage && exit
+    get_volume $device
+    if [ "$_RET" = "0" ]; then
+      set_volume $device $3
+    else
+      set_volume $device 0
+    fi
+    ;;
+  *) set_volume $device $2 ;;
+esac
+
+if [ "${!#}" = "osd" ]; then 
+  osd volume $device
+fi
+

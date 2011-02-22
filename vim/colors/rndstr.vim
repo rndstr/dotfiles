@@ -61,6 +61,8 @@ if has("gui_running")
   highlight link railsMethod Type
 end
 
+hi CursorLine cterm=bold ctermbg=none
+
 " hilight tabs
 highlight extraWhitespace ctermbg=5 guibg=#9975a6
 match extraWhitespace /\t/
