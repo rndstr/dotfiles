@@ -1,0 +1,8 @@
+#!/bin/bash
+
+FILE=wip.diff
+
+[ !-f $FILE ] && { echo "no stash found in $FILE, bye."; exit 1; }
+
+patch -p0 -i $FILE
+rm -f $FILE
