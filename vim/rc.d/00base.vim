@@ -110,13 +110,16 @@ nmap ,fh :FufHelp<CR>
 nmap ,fb :FufBufferTag<CR>
 vmap ,px !xmllint --format -<CR>
 
+nmap ,cs :let @*=expand("%")<CR>
+nmap ,cf :let @*=expand("%:p")<CR>
+
 nmap ,wp !opera http://php.net/<cword><CR>
 
 " uncommenting lines
 map ,/ :s/^/\/\//<CR>
 
 " list lines with word under cursor and jump
-map ,f [I:let nr = input("line: ")<Bar>exe"normal ".nr."[\t"<CR>
+map ,l [I:let nr = input("line: ")<Bar>exe"normal ".nr."[\t"<CR>
 
 " remap code completion to Ctrl+Space {{{2
 if has("gui")
