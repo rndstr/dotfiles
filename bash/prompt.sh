@@ -130,7 +130,7 @@ function set_prompt() {
         if [ -n "$scm" ]; then
             scm="${brown}$scm:"
         fi
-        PS1="${no_color}\u${hostname_color}\H${user_color}<${scm}${no_color}\W${user_color}${suffix} ${no_color}"
+        PS1="${no_color}\u${hostname_color}\H${no_color}${user_color}<${scm}${no_color}\W${user_color}${suffix} ${no_color}"
         PS2='\[\e[00;33m\]>\[\e[0m\] '
         PS3='> ' # PS3 doesn't get expanded like 1, 2 and 4
         PS4='\[\e[01;31m\]+\[\e[0m\]'
