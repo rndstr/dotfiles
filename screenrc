@@ -37,7 +37,7 @@ msgwait 5
 
 caption always "%{= Yw}%-Lw%{=u kw}%50>%f* %t%{-}%+Lw%<"
 #hardstatus alwayslastline "%{wk} %l %=%Y%m%d %c "
-hardstatus alwayslastline "%{=b rW} %H %{= Wk} %l` %{gk} %=%Y%m%d %c "
+hardstatus alwayslastline "%{=b rW} %H %{= Wk} %l %{gk} %=%Y%m%d %c "
 
 
 # bindings, press ^a and key
