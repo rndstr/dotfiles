@@ -37,7 +37,7 @@ msgwait 5
 
 caption always "%{= Yw}%-Lw%{=u kw}%50>%f* %t%{-}%+Lw%<"
 #hardstatus alwayslastline "%{wk} %l %=%Y%m%d %c "
-backtick 1 0 0 $HOME/bin/traffic.sh
+backtick 1 0 0 $HOME/.dotfiles/bin/traffic
 backtick 2 300 300 $HOME/bin/gmailcount.sh
 backtick 3 300 300 $HOME/bin/getmailcount.sh $HOME/.maildir/inbox-gmx/ new
 backtick 4 300 300 $HOME/bin/getmailcount.sh $HOME/.maildir/cronjobs/ new
