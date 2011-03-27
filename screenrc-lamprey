@@ -39,8 +39,6 @@ caption always "%{= Yw}%-Lw%{=u kw}%50>%f* %t%{-}%+Lw%<"
 #hardstatus alwayslastline "%{wk} %l %=%Y%m%d %c "
 backtick 1 0 0 $HOME/bin/traffic.sh
 backtick 2 300 300 $HOME/bin/gmailcount.sh
-backtick 3 300 300 $HOME/bin/getmailcount.sh $HOME/.maildir/inbox-gmx/ new
-backtick 4 300 300 $HOME/bin/getmailcount.sh $HOME/.maildir/cronjobs/ new
 hardstatus alwayslastline "%{=b rW} %H %{= Wk} %l -- %1` %{gW} gmx%{k}%3` %{W}cj%{k}%4` %{W}gog%{k}%2` %=%Y%m%d %c "
 
 
@@ -48,7 +46,7 @@ hardstatus alwayslastline "%{=b rW} %H %{= Wk} %l -- %1` %{gW} gmx%{k}%3` %{W}cj
 bind ~ activity "activity in %n (%t) [%w:%s]~"
 bind * activity "activity in %n (%t) [%w:%s]"
 bind z screen -t 'ROOT' su
-bind L screen -t 'LOG' sudo /usr/bin/tail -f /var/log/everything/current
+bind L screen -t 'LOG' sudo /usr/bin/tail -f /var/log/everything.log
 bind K source $HOME/.screenrc
 bind H screen -t 'HTOP' htop
 
