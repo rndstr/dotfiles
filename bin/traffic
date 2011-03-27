@@ -1,0 +1,28 @@
+#!/bin/bash
+# http://nion.modprobe.de/setup/traffic.sh
+#
+# Almost everything of this is shamelessly copied from
+# http://www.lugmen.org.ar/~conan/tmp/wmii/status
+
+iface=eth0
+period=4
+
+[ -n "$1" ] && iface=$1
+[ -n "$2" ] && period=$2
+
+mult=$((period * 1024))
+
+while true; do
+    RX0=`/bin/grep $iface /proc/net/dev | tr ':' ' ' | awk {'print $2'}`
+    TX0=`/bin/grep $iface /proc/net/dev | tr ':' ' ' | awk {'print $10'}`
+    sleep $period
+    RX1=`/bin/grep $iface /proc/net/dev | tr ':' ' ' | awk {'print $2'}`
+    TX1=`/bin/grep $iface /proc/net/dev | tr ':' ' ' | awk {'print $10'}`
+    RX="$(((RX1-RX0)/mult))"
+    TX="$(((TX1-TX0)/mult))"
+
+    RX="`printf %d $RX`K"
+    TX="`printf %d $TX`K"
+
+    echo "$TX/$RX"
+done
