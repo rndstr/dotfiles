@@ -6,6 +6,8 @@ if os == "Darwin"
 else
     if hostname == "irukandji"
         set guifont=DejaVu\ Sans\ Mono\ 8
+    elseif hostname == "pearlscalae"
+        set guifont=DejaVu\ Sans\ Mono\ 20
     else
         set guifont=DejaVu\ Sans\ Mono\ 10
     endif
