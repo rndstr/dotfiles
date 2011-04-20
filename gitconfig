@@ -1,14 +1,14 @@
 [user]
-	email = r@rndstr.org
-	name = Roland Schilter
+  email = r@rndstr.org
+  name = Roland Schilter
   editor = vim
 [core]
-  whitespace = trailing-space,space-before-tab,indent-with-non-tab,cr-at-eol
-	editor = vim
+  whitespace = trailing-space,space-before-tab,cr-at-eol,tab-in-indent
+  editor = vim
 [merge]
   tool = gvimdiff
 [color]
-	ui = auto
+  ui = auto
   diff = auto
   status = auto
   branch = auto
@@ -20,10 +20,12 @@
   br = branch -va
   ci = commit
   s = status
+  sl = stash list
+  sp = stash pop
   lg = log --graph --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   lp = log -p
   d = diff
   sm = submodule
   unstage = reset HEAD --
-  pu = !"git fetch -v origin; git fetch -v upstream; git merge upstream/master"
+  pum = !"git fetch -v origin; git fetch -v upstream; git merge upstream/master"
   pur = !"git fetch -v origin; git fetch -v upstream; git rebase upstream/master"
