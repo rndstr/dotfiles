@@ -19,7 +19,7 @@
   ap = add --patch
   co = checkout
   pr = pull --rebase
-  br = branch -va
+  br = branch -v
   ci = commit
   s = status
   sl = stash list
