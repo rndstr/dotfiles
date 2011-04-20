@@ -12,6 +12,8 @@
   diff = auto
   status = auto
   branch = auto
+[web]
+  browser = opera
 [alias]
   a = commit --all
   ap = add --patch
