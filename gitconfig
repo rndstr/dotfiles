@@ -12,6 +12,13 @@
   diff = auto
   status = auto
   branch = auto
+[color "status"]
+  added = yellow
+  changed = green
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
 [web]
   browser = opera
 [alias]
@@ -27,7 +34,10 @@
   lg = log --graph --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   lp = log -p
   d = diff
+  dc = diff --cached
+  ds = diff --stat
   sm = submodule
   unstage = reset HEAD --
   pum = !"git fetch -v origin; git fetch -v upstream; git merge upstream/master"
   pur = !"git fetch -v origin; git fetch -v upstream; git rebase upstream/master"
+  w = whatchanged
