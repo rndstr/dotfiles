@@ -35,11 +35,11 @@ msgwait 5
 # free mem
 #backtick 1 60 60 awk '{if ($1=="MemTotal:") mt = $2; if ($1=="MemFree:") mm = $2; if ($1=="Buffers:") mb = $2; if ($1=="Cached:") mc = $2} END {printf ("RAM %2.0f%"), ((mt-(mm+mb+mc)) * 100 / mt);}' /proc/meminfo
 
-caption always "%{= Yw}%-Lw%{=u kw}%50>%f* %t%{-}%+Lw%<"
+caption always "%{= Bw}%-Lw%{=u kw}%50>%f* %t%{-}%+Lw%<"
 #hardstatus alwayslastline "%{wk} %l %=%Y%m%d %c "
 backtick 1 0 0 $HOME/.dotfiles/bin/traffic
 backtick 2 300 300 $HOME/bin/gmailcount.sh
-hardstatus alwayslastline "%{=b rW} %H %{= Wk} %l -- %1` %{gW} gmx%{k}%3` %{W}cj%{k}%4` %{W}gog%{k}%2` %=%Y%m%d %c "
+hardstatus alwayslastline "%{=b rW} %H %{= Wk} %l -- %1` %{rW} gmx%{k}%3` %{W}cj%{k}%4` %{W}gog%{k}%2` %=%Y%m%d %c "
 
 
 # bindings, press ^a and key
