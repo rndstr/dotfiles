@@ -36,6 +36,13 @@ let g:fuf_keyOpenTabpage = '<CR>'
 let g:fuf_keyPrevMode = '<C-e>'
 let g:fuf_keyNextMode = '<C-r>'
 
+nmap ,ff :FufFile<CR>
+nmap ,fc :FufCoverageFile<CR>
+nmap ,fl :FufLine<CR>
+nmap ,fh :FufHelp<CR>
+nmap ,fb :FufBufferTag<CR>
+vmap ,px !xmllint --format -<CR>
+
 """""""""""""""""""""""""""
 " gist
 let g:gist_clip_command = 'xclip -sel clip'

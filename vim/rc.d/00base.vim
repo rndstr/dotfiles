@@ -103,12 +103,6 @@ let g:winManagerWindowLayout = 'FileExplorer,TagsExplorer|BufExplorer'
 nmap ,s :source ~/.vimrc<CR>
 nmap ,g :source ~/.vimrc<CR>:source ~/.gvimrc<CR>
 nmap ,v :tabnew ~/.vimrc<CR>
-nmap ,ff :FufFile<CR>
-nmap ,fc :FufCoverageFile<CR>
-nmap ,fl :FufLine<CR>
-nmap ,fh :FufHelp<CR>
-nmap ,fb :FufBufferTag<CR>
-vmap ,px !xmllint --format -<CR>
 
 nmap ,cs :let @*=expand("%")<CR>
 nmap ,cf :let @*=expand("%:p")<CR>
