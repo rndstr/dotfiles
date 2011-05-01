@@ -21,9 +21,9 @@ if [[ -x /usr/bin/devtodo && -n "$SHAD_HOME" ]]; then
 fi
 
 # --- find ---
-alias fmp3="cat /pub/mp3/.mp3listing | grep -i"
+alias fmp3="cat /20media/audio/music/.listing | grep -i"
 function fmovie() {
-  cat /pub/.movielisting* | grep -i $*
+  cat /20media/video/.movielisting* | grep -i $*
   lsre -ld /0Amovie 0 -ld /0Amovie/ARCHIVE/ 1 | grep -i $*
 }
 
