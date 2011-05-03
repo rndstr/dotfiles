@@ -13,8 +13,8 @@
   status = auto
   branch = auto
 [color "status"]
-  added = yellow
-  changed = green
+  added = green
+  changed = yellow
 [color "branch"]
   current = yellow reverse
   local = yellow
@@ -31,8 +31,9 @@
   s = status
   sl = stash list
   sp = stash pop
-  lg = log --graph --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  lg = log --graph --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)%an%Creset' --abbrev-commit --date=relative
   lp = log -p
+  lw = whatchanged
   d = diff
   dc = diff --cached
   ds = diff --stat
@@ -40,4 +41,4 @@
   unstage = reset HEAD --
   pum = !"git fetch -v origin; git fetch -v upstream; git merge upstream/master"
   pur = !"git fetch -v origin; git fetch -v upstream; git rebase upstream/master"
-  w = whatchanged
+
