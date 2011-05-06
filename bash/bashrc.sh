@@ -37,7 +37,7 @@ if [ $IS_LOGIN_SHELL = 'yes' ]; then
   export PATH=${PATH}:/usr/local/bin:${HOME}/.dotfiles/bin:${HOME}/bin
 
   # Will be non-empty if shad is available
-  export SHAD_HOME=""
+  export LAMPREY_HOME=""
 
   load_env () {
     if [ -d ${HOME}/.dotfiles/bash/env.d/$1 ]; then
@@ -68,7 +68,6 @@ if [ $IS_LOGIN_SHELL = 'yes' ]; then
   [ -n "$DOTFILES_ENV_DOMAIN" ] && load_env domain/$DOTFILES_ENV_DOMAIN
   [ -n "$DOTFILES_ENV_DIST" ] && load_env dist/$DOTFILES_ENV_DIST
   load_env host/$host
-
 
   [ -f ~/.dotfiles/bash/prompt.sh ] && source ~/.dotfiles/bash/prompt.sh
 
