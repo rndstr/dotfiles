@@ -23,6 +23,10 @@ function f.tolower() {
   done
 }
 
+function touchr() {
+  for dir in $*; do echo $dir; find $dir -print0 | xargs -0 touch; done;
+}
+
 function dua() { IFS=$'\n'; for i in `ls -1`; do du "$i"; done; }
 function duaa() { IFS=$'\n'; for i in `ls -A1`; do du "$i"; done; }
 
