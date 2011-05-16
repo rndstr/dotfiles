@@ -152,7 +152,6 @@ vmap <BS> x
 imap <C-L> @@@<Esc>hhkywjl?@@@<CR>P/@@@<CR>3s
 
 
-
 "" vimdiff for git
 " get local chunk and move to next 
 nmap <C-left> :diffget 1<CR>]c
@@ -160,3 +159,9 @@ nmap <C-left> :diffget 1<CR>]c
 nmap <C-right> :diffget 3<CR>]c
 nmap <C-down> ]c
 nmap <C-up> [c
+
+" skip words camelCase
+nnoremap <silent><C-h> :<C-u>call search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&\>\@!\)\<Bar>\%^','bW')<CR>
+nnoremap <silent><C-l> :<C-u>call search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&\>\@!\)\<Bar>\%$','W')<CR>
+inoremap <silent><C-h> <C-o>:call search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&\>\@!\)\<Bar>\%^','bW')<CR>
+inoremap <silent><C-l> <C-o>:call search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&\>\@!\)\<Bar>\%$','W')<CR>
