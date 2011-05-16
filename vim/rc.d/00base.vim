@@ -125,7 +125,17 @@ else " no gui
   endif
 endif
 
-nnoremap <C-n> :set invnumber number?<CR>
+function! ToggleNumberMode()
+    if &rnu == 1
+        set nu
+    elseif &nu == 1
+        set nonu
+    else
+        set rnu
+    endif
+endfunc
+
+nnoremap <C-n> :call ToggleNumberMode()<CR>
 nnoremap <C-p> :set invpaste paste?<CR>
 
 function! ToggleShiftwidth()
