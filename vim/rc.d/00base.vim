@@ -38,7 +38,7 @@ endif
 set lsp=0 " space out a little more
 set ruler " display ruler
 set cmdheight=1 " height of command bar
-set number " line numbers are on
+set relativenumber " line numbers are on
 set lz " lazyredraw, do not redrawy while running macros
 set backspace=2 " make backspace work normal
 set showcmd
