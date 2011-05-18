@@ -106,7 +106,7 @@ nmap ,v :tabnew ~/.vimrc<CR>
 
 nmap ,cs :let @*=expand("%")<CR>
 nmap ,cp :let @*=expand("%:p")<CR>
-nmap ,cf :let @*=expand("%:p:h")<CR>
+nmap ,cd :let @*=expand("%:p:h")<CR>
 
 nmap ,wp !opera http://php.net/<cword><CR>
 
