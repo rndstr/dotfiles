@@ -170,7 +170,7 @@ REGISTERS                                       *cs-registers*
 [I] ^r<reg> Insert contents of <reg>
 
 ACTIONS                                         *cs-actions*
-U               Uppercase selected text
+U/~             Uppercase selected text/on cursor
 D               Delete rest of the line
 J               Merge-append previous with current line
 
