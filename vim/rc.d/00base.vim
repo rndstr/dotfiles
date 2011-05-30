@@ -30,6 +30,7 @@ if exists('+autochdir')
 else
     autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
 endif
+set wildignore+=.git,.svn,.hg,**/cache/**
 
 
 """"""""""""""""""""""""""""
@@ -57,6 +58,11 @@ set statusline=%F%m%r%h%w\ [%{&ff}]\ %y\ %04v:%04l\ %=%p%%/%L\ [a\%03.3b,0x\%02.
 set laststatus=2 " always show the status line
 " display cues :set list 
 set lcs=tab:>-,extends:$
+
+"""""""""""""""""""""""""""""
+" formatting
+set hlsearch
+set incsearch " incremental search, do search/highlight as you type
 
 
 """""""""""""""""""""""""""""

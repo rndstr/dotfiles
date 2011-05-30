@@ -31,6 +31,7 @@
   s = status
   sl = stash list
   sp = stash pop
+  sd = diff stash@{0}
   lg = log --graph --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)%an%Creset' --abbrev-commit --date=relative
   lp = log -p
   lw = whatchanged

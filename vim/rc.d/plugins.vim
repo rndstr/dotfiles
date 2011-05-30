@@ -27,20 +27,20 @@ endif
 """""""""""""""""""""""""""
 " fuzzyfinder
 let g:fuf_file_exclude = '\v\(~|-)$|\.(o|exe|dll|bak|orig|sw[po])$|(^|[/\\])\.(hg|git|bzr|svn)($|[/\\])'
-let g:fuf_coveragefile_exclude = '\v\(~|-)$|\.(o|exe|dll|bak|orig|sw[po])$|(^|[/\\])\.(hg|git|bzr|svn)($|[/\\])'
+let g:fuf_coveragefile_exclude = '\v\(~|-)$|\.(o|exe|dll|bak|orig|sw[po])$|(^|[/\\])\.(hg|git|bzr|svn)|cache($|[/\\])'
 let g:fuf_coveragefile_globPatterns = ['~/**/.*', '~/**/*']
-let g:fuf_dir_exclude = '\v(^|[/\\])\.(hg|git|bzr|svn)($|[/\\])'
+let g:fuf_dir_exclude = '\v(^|[/\\])(\.(hg|git|bzr|svn)|cache)($|[/\\])'
+let g:fuf_maxMenuWidth = 300
 
 let g:fuf_keyOpen = '<C-l>'
 let g:fuf_keyOpenTabpage = '<CR>'
-let g:fuf_keyPrevMode = '<C-e>'
-let g:fuf_keyNextMode = '<C-r>'
 
 nmap ,ff :FufFile<CR>
 nmap ,fc :FufCoverageFile<CR>
 nmap ,fl :FufLine<CR>
 nmap ,fh :FufHelp<CR>
-nmap ,fb :FufBufferTag<CR>
+nmap ,fb :FufBuffer<CR>
+nmap ,ft :FufBufferTag<CR>
 vmap ,px !xmllint --format -<CR>
 
 """""""""""""""""""""""""""
@@ -66,7 +66,7 @@ set cscopeprg=/usr/bin/cscope
 " NERD_tree.vim
 " http://www.catonmat.net/blog/vim-plugins-nerdtree-vim/
 
-map <F8> :NERDTreeToggle<CR>
+map <silent> <F8> :NERDTreeToggle<CR>
 
 
 
