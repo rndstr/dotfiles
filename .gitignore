@@ -1,4 +1,3 @@
 *.gz
 vim/rc.d/x-*
 vim/php/doc/*
-test
