@@ -32,8 +32,8 @@ let g:fuf_coveragefile_globPatterns = ['~/**/.*', '~/**/*']
 let g:fuf_dir_exclude = '\v(^|[/\\])(\.(hg|git|bzr|svn)|cache)($|[/\\])'
 let g:fuf_maxMenuWidth = 300
 
-let g:fuf_keyOpen = '<C-l>'
-let g:fuf_keyOpenTabpage = '<CR>'
+let g:fuf_keyOpen = '<CR>'
+let g:fuf_keyOpenTabpage = '<C-t>'
 
 nmap ,ff :FufFile<CR>
 nmap ,fc :FufCoverageFile<CR>
