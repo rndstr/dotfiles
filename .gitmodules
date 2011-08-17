@@ -19,3 +19,6 @@
 [submodule "vim/bundle/ack"]
 	path = vim/bundle/ack
 	url = git://github.com/mileszs/ack.vim.git
+[submodule "vim/bundle/xmledit"]
+	path = vim/bundle/xmledit
+	url = git://github.com/sukima/xmledit.git

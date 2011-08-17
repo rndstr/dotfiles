@@ -1,3 +1,9 @@
+"""""""""""""""""""""""""""
+" xmledit
+let g:xml_syntax_folding=1
+au FileType xml setlocal foldmethod=syntax
+
+
 " prolly should move this to ~/.vim/after/plugin/ ?
 
 command! JSLint !js ~/.dotfiles/bin/jslint "`cat %`" | sed -e 's/<div>/<div>\&nbsp;/g' | lynx -dump -stdin

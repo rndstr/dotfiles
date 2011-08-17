@@ -79,13 +79,14 @@ ps_scm_f() {
             [[ -n "${r}${b}${a}" ]] && s="${r:+${r}:}${b}${a:+${a}}"
         fi
     fi
-    s="${s}${ACTIVE_COMPILER}"
     s="${s:+${s}}"
     echo -n "$s"
 }
 
 function set_prompt() {
+
 # If not running interactively, don't do anything
+
     if [ ! -z "$PS1" ]; then
 
         black="\[\033[0;30m\]"
@@ -106,9 +107,10 @@ function set_prompt() {
         white="\[\033[1;37m\]"
         no_color="\[\033[0m\]"
 
-        hostname_color="$white"
-        suffix_count=1
-        suffix=""
+        local hostname_color="$white"
+        local suffix_count=1
+        local suffix=""
+        local user_color= scm= retval=
 
         if [ $UID -eq 0 ]; then
             user_color="$light_red"
@@ -131,13 +133,12 @@ function set_prompt() {
             scm="${brown}$scm "
         fi
 
-        #PS1="${no_color}\u${hostname_color}\H${no_color}${user_color}<${scm}${no_color}\W${user_color}${suffix} ${no_color}"
-        PS1="${user_color}*${no_color}\u${hostname_color}\H${no_color}${user_color}*${no_color}\w\n${scm}${user_color}${suffix}${no_color} "
+        PS1="${user_color}*${no_color}\u${hostname_color}\H${no_color}${user_color}*${no_color}\w\n${yellow}\$?${scm}${user_color}${suffix}${no_color} "
         PS2='\[\e[00;33m\]>\[\e[0m\] '
         PS3='> ' # PS3 doesn't get expanded like 1, 2 and 4
         PS4='\[\e[01;31m\]+\[\e[0m\]'
     fi
 }
 
-export PROMPT_COMMAND=set_prompt
+export PROMPT_COMMAND="set_prompt"
 
