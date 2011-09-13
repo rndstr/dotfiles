@@ -126,3 +126,13 @@ let g:DoxygenToolkit_licenseTag=g:DoxygenToolkit_licenseTag . "Foundation, Inc.,
 
 
 
+"""""""""""""""""""""""""""
+" VimDebugger
+
+map <leader>dr :DbgRun<CR>
+map <leader>dq :DbgDetach<CR>
+map <F11> :DbgStepInto<CR>
+map <F10> :DbgStepOver<CR>
+map <S-F11> :DbgStepOut<CR>
+map <F12> :DbgToggleBreakpoint<CR>
+map <leader>db :DbgToggleBreakpoint<CR>

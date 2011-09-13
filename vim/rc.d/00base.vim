@@ -106,21 +106,23 @@ let g:winManagerWindowLayout = 'FileExplorer,TagsExplorer|BufExplorer'
 
 """"""""""""""""""""""""""""
 " mappings
-nmap ,s :source ~/.vimrc<CR>
-nmap ,g :source ~/.vimrc<CR>:source ~/.gvimrc<CR>
-nmap ,v :tabnew ~/.vimrc<CR>
+let mapleader = ","
 
-nmap ,cs :let @*=expand("%")<CR>
-nmap ,cp :let @*=expand("%:p")<CR>
-nmap ,cd :let @*=expand("%:p:h")<CR>
+nmap <leader>s :source ~/.vimrc<CR>
+nmap <leader>g :source ~/.vimrc<CR>:source ~/.gvimrc<CR>
+nmap <leader>v :tabnew ~/.vimrc<CR>
 
-nmap ,wp !opera http://php.net/<cword><CR>
+nmap <leader>cs :let @*=expand("%")<CR>
+nmap <leader>cp :let @*=expand("%:p")<CR>
+nmap <leader>cd :let @*=expand("%:p:h")<CR>
+
+nmap <leader>wp !opera http://php.net/<cword><CR>
 
 " uncommenting lines
-map ,/ :s/^/\/\//<CR>
+map <leader>/ :s/^/\/\//<CR>
 
 " list lines with word under cursor and jump
-map ,l [I:let nr = input("line: ")<Bar>exe"normal ".nr."[\t"<CR>
+map <leader>l [I:let nr = input("line: ")<Bar>exe"normal ".nr."[\t"<CR>
 
 " remap code completion to Ctrl+Space {{{2
 if has("gui")
