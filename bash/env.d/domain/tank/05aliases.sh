@@ -22,6 +22,7 @@ alias fmp3="cat /20media/audio/music/.listing | grep -i"
 function fmovie() {
   cat /20media/video/.movielisting* | grep -i $*
   lsre -ld /0Amovie 0 -ld /0Amovie/ARCHIVE/ 1 | grep -i $*
+  lsre -ld /mnt/BACKUP_LAMPREY/BT/movie 0 -ld /mnt/BACKUP_LAMPREY/BT/movie/seen 0 -ld /mnt/BACKUP_LAMPREY/BT/movie/new 0 -ld /mnt/BACKUP_LAMPREY/BT/movie/new/seen 0 | grep -i $*
 }
 
 
