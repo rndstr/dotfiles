@@ -21,6 +21,8 @@
   remote = green
 [web]
   browser = opera
+[diff]
+  mnemonicprefix = true
 [alias]
   a = commit --all
   ap = add --patch
@@ -40,6 +42,7 @@
   ds = diff --stat
   sm = submodule
   unstage = reset HEAD --
+  undo = reset --soft HEAD^
   pum = !"git fetch -v origin; git fetch -v upstream; git merge upstream/master"
   pur = !"git fetch -v origin; git fetch -v upstream; git rebase upstream/master"
 
