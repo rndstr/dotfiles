@@ -180,12 +180,14 @@ imap <C-m> @@@<Esc>hhkywjl?@@@<CR>P/@@@<CR>3s
 
 
 "" vimdiff for git
-" get local chunk and move to next 
-nmap <C-left> :diffget 1<CR>]c
-" get remote chunk and move to next
-nmap <C-right> :diffget 3<CR>]c
-nmap <C-down> ]c
-nmap <C-up> [c
+if &diff
+  " get local chunk and move to next
+  nmap <C-left> :diffget 1<CR>]c
+  " get remote chunk and move to next
+  nmap <C-right> :diffget 3<CR>]c
+  nmap <C-down> ]c
+  nmap <C-up> [c
+endif
 
 " skip words camelCase
 nnoremap <silent><C-h> :<C-u>call search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&\>\@!\)\<Bar>\%^','bW')<CR>
