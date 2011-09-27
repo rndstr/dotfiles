@@ -56,7 +56,7 @@ set showmatch " show matching brackets
 set matchtime=5 " how many tenths of a second to blink matahcing brackets for
 set statusline=%F%m%r%h%w\ [%{&ff}]\ %y\ %04v:%04l\ %=%p%%/%L\ [a\%03.3b,0x\%02.2B]
 set laststatus=2 " always show the status line
-" display cues :set list 
+" display cues :set list
 set lcs=tab:>-,extends:$
 
 """""""""""""""""""""""""""""
@@ -91,7 +91,7 @@ set nowrap " no wrapping of lines
 set grepprg=grep\ -nH\ $*
 " unset so K defaults to :help (man otherwise)
 set keywordprg=
- 
+
 
 """""""""""""""""""""""""""""
 " file explorer
