@@ -64,9 +64,12 @@ end
 
 hi CursorLine cterm=bold ctermbg=none
 
-" hilight tabs
 highlight extraWhitespace ctermbg=5 guibg=#9975a6
+" any tabs
 match extraWhitespace /\t/
+" trailing whitespace
+au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+au InsertLeave * match ExtraWhitespace /\s\+$/
 
 highlight debugCode ctermbg=5 guifg=#000000 guibg=#f648af
 
