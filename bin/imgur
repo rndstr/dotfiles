@@ -1,0 +1,38 @@
+#!/bin/bash
+#
+# upload image to cookie-authenticated imgur
+#
+
+USER=$1
+PASS=$2
+KEY=$3
+IMG=$4
+
+COOKIEJAR=$(tempfile)
+
+if [ -z "$IMG" ]; then
+  echo "usage: $(basename $0) <user> <pass> <key> <img>"
+  exit 1
+fi
+
+# login
+curl -s -d username=$USER -d password=$PASS -o /dev/null -c $COOKIEJAR http://api.imgur.com/2/signin
+
+# upload
+response=$(curl -s -F "image=@$IMG" -F "key=$KEY" -b $COOKIEJAR http://api.imgur.com/2/account/images)
+url=$(echo $response | grep -E -o "<original>(.)*</original>" | grep -E -o "http://i.imgur.com/[^<]*")
+
+if [ -z "$url" ]; then
+  echo "something must have gone wrong"
+  echo $response
+  exit 1
+fi
+
+# cleanup
+unlink $COOKIEJAR
+
+# notify
+echo $url
+echo -n $url | xclip -selection primary
+notify-send $url
+

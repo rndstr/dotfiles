@@ -1,20 +1,26 @@
 #!/bin/bash
 #
-# Takes a screenshot from your desktops or windows
+# Take a screenshot
 #
 # USAGE
-#   screenie.sh [area] [--name|-n file] [--target|-t dir] [--viewer|-v command]
+#   screenie [area] [--name|-n file] [--target|-t dir] [--execute|-e command] [--silent|-s]
 #
-#     area              w|d|t (window, desktop, tvtime)
+#     area              w|d|t|s (window, desktop, tvtime, snip)
 #     --name            Name of the file (w/o extension)
+#     --silent          Non-interactive
 #
 # DEPS
-#   kde-base/kdialog
 #   media-gfx/imagemagick
 #   x11-apps/xwd
+#   media-gfx/scrot
+#   kde-base/kdialog
+#   x11-misc/notify-osd
 #
 # NOTE
 #   tvtime area appends /tvtime to target
+#
+# TODO
+#   clean up
 
 
 # DEFAULT SETTINGS
@@ -24,13 +30,14 @@ TARGET=~/screens
 # Name of the shot without the extension
 FILENAME="screen-$(date +%Y%m%d_%H%M%S)"
 # What to execute after screenshot was taken
-VIEWER=
+EXEC=
 # Image extension
 EXT=png
 
-# Default area
-# d = desktop, w = window, t = tvtime
-AREA='d'
+AUTOEXEC=0
+
+# Default area (empty for prompt)
+AREA=
 
 # Whether to ask for a name (if filename is given we always skip this)
 ASKRENAME=1
@@ -41,38 +48,58 @@ TMPDIR=${TMPDIR:-/tmp}
 while [ $# -gt 0 ]; do
   case "$1" in
     -t|--target) shift ; TARGET=$1; shift ;;
-    -v|--viewer) shift ; VIEWER=$1; shift ;;
-    -f|--name) shift ; FILENAME=$1; ASKRENAME=0; shift ;;
+    -e|--execute) shift ; EXEC=$1; shift ;;
+    -n|--name) shift ; FILENAME=$1; ASKRENAME=0; shift ;;
+    -s|--silent) AUTOEXEC=1; ASKRENAME=0; shift ;;
     *) AREA=$1; shift ;;
   esac
 done
+
+if [ -z "$AREA" ]; then
+  AREA=$(kdialog --radiolist "Area" s Snip 1 w Window 1 d Desktop 1 t TVTime 1)
+fi
 
 [ "$AREA" = "t" ] && TARGET+=/tvtime
 
 [ ! -e $TARGET ] && mkdir $TARGET
 
-if [ "$AREA" = "t" ]; then
-  tvtime-command SCREENSHOT "$TARGET/$FILENAME.$EXT"
-else
 
-  if [ "$AREA" = "d" ]; then
-    import -window root $TARGET/$FILENAME.$EXT
-  else
-    xwd -out $TMPDIR/dummy.xwd
-    convert $TMPDIR/dummy.xwd $TARGET/$FILENAME.$EXT
-    rm -f $TMPDIR/dummy.xwd
-  fi
+case "$AREA" in
+  t*) tvtime-command SCREENSHOT "$TARGET/$FILENAME.$EXT" ;;
+  d*) import -window root $TARGET/$FILENAME.$EXT ;;
+  w*) xwd -out $TMPDIR/dummy.xwd
+      convert $TMPDIR/dummy.xwd $TARGET/$FILENAME.$EXT
+      rm -f $TMPDIR/dummy.xwd
+      ;;
+  s*) scrot -s $TARGET/$FILENAME.$EXT ;;
+  *) echo "Unknown area: $AREA"; exit 1 ;;
+esac
 
-  if [ $(which kdialog2 2>/dev/null) ]; then
-    rename=$(kdialog --title "Save as (w/o ext)" --inputbox "New name (cancel for $FILENAME)")
-  fi
 
-  if [ -n "$rename" ]; then
-    mv $TARGET/$FILENAME.$EXT $TARGET/$rename.$EXT
-    FILENAME=$rename
-  fi
-
-  [ -n "$VIEWER" ] && $VIEWER $TARGET/$FILENAME.$EXT
-  echo $TARGET/$FILENAME.$EXT
+rename=$FILENAME
+if [ 1 = $ASKRENAME ]; then
+  rename=$(kdialog --title "Save as (w/o ext)" --inputbox "Name" $FILENAME)
 fi
 
+if [[ -n "$rename" && $rename != $FILENAME ]]; then
+  mv $TARGET/$FILENAME.$EXT $TARGET/$rename.$EXT
+  FILENAME=$rename
+fi
+
+echo $TARGET/$FILENAME.$EXT
+echo -n $TARGET/$FILENAME.$EXT | xclip -selection primary
+
+
+if [ -n "$EXEC" ]; then
+  if [ 0 -eq $AUTOEXEC ]; then
+    if ! kdialog --yesno "Execute \`$EXEC\`?" 2>/dev/null; then
+      EXEC=
+    fi
+  fi
+  [ -n "$EXEC" ] && $EXEC $TARGET/$FILENAME.$EXT
+fi
+
+
+if [ -z "$rename" ]; then
+  rm -f $TARGEt/$FILENAME.$EXT
+fi
