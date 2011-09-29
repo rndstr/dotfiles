@@ -92,7 +92,6 @@ set grepprg=grep\ -nH\ $*
 " unset so K defaults to :help (man otherwise)
 set keywordprg=
 
-
 """""""""""""""""""""""""""""
 " file explorer
 let g:explVertical=1
@@ -175,8 +174,9 @@ nmap X ci'
 " backspace deletes in edit mode
 vmap <BS> x
 
+
 " piece-wise copying of line above current oen
-imap <C-m> @@@<Esc>hhkywjl?@@@<CR>P/@@@<CR>3s
+"imap <C-m> @@@<Esc>hhkywjl?@@@<CR>P/@@@<CR>3s
 
 
 "" vimdiff for git
