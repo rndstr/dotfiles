@@ -49,6 +49,7 @@ SEARCH                                          *cs-search*
 f/F<char>       Move cursor to next/prev char
 t/T<char>       Same but stops one char short  
 */#             Find next/previous instance of whole word
+g*/g#           Find next/previous instance of partial word
 n/N             Next/previous search             
  \c             Force case-insensitive search in pattern
 
@@ -183,6 +184,7 @@ INSERTS                                         *cs-insert*
 ^t / ^d     Inserts/removes one indent at start of line
 
 MISC                                            *cs-misc*
+gi              Insert mode where you left it last time
 ^g / g^g        Where am I?
 << / >>         Indent
 ZZ              Exit with saving

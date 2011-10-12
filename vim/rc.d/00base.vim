@@ -10,6 +10,7 @@ filetype on
 set history=1000
 " to disable auto-folding in latex: filetype plugin off (there should be another way tho, no?)
 filetype indent on
+filetype plugin on
 set winaltkeys=no
 set encoding=utf8
 set fileencoding=utf8

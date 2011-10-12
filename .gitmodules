@@ -25,3 +25,6 @@
 [submodule "vim/bundle/VimDebugger"]
 	path = vim/bundle/VimDebugger
 	url = git://github.com/taxilian/VimDebugger.git
+[submodule "vim/bundle/ManPageView"]
+	path = vim/bundle/ManPageView
+	url = git://github.com/vim-scripts/ManPageView.git
