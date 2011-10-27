@@ -126,6 +126,8 @@ VIEWPORT                                        *cs-viewport*
 ^w[lines]+/-    Change size
 ^wr/R           Rotate viewports
 ^wn             Same as :sp
+^wL/K/H/J       Move windows around, change split direction
+^wO             Close all except current
 
 
 SCROLLING
