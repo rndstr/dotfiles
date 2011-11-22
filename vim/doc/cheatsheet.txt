@@ -86,8 +86,15 @@ CURSOR                                          *cs-cursor*
 g;              Prev pos in change list
 g,              Next pos in change list
 gi              Go back to insert mode where you left it
+^o/^i           Retrace your movements in file
 See [changelist]
 
+HISTORY                                         *cs-history*
+:history        History
+:his c          Commandline history
+:his s          Search history
+q/              Search history window 
+q:              Commandline history window
 
 BOOKMARKS                                       *cs-bookmarks*
 :marks    List
@@ -120,6 +127,7 @@ VIEWPORT                                        *cs-viewport*
 :<lines> sp [file]      New viewport has <lines>
 :vsp            Same as :sp but vertical
 
+WINDOW                                          *cs-window*
 ^wq             Same as :q
 ^ww             Move between viewports
 ^w=             Balance viewport space
@@ -153,7 +161,7 @@ BUFFERS                                         *cs-buffers*
 :bw[ipeout]     Unload and delete
 
 TABS                                            *cs-tabs*
-:tabe #<buf>    Opens buffer in tab
+:tabe %<buf>    Opens buffer in tab
 
 RECORDING                                       *cs-record*
 q<char>     Start recording into register

@@ -41,7 +41,7 @@ let g:fuf_maxMenuWidth = 300
 let g:fuf_keyOpen = '<CR>'
 let g:fuf_keyOpenTabpage = '<C-t>'
 let g:fuf_keyOpenSplit = '<C-k>'
-let g:fuf_keyOpenVsplit = '<C-h>'
+let g:fuf_keyOpenVsplit = '<C-l>'
 
 nmap ,ff :FufFile<CR>
 nmap ,fc :FufCoverageFile<CR>
