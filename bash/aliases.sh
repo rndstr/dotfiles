@@ -75,6 +75,7 @@ function fbup { while [ $# -gt 0 ]; do cp -i "$1" "$1-"; shift; done; }
 function TODO() { echo $* >> $HOME/.TODO; }
 
 function f() { find -iname "*$**"; }
+function g() { grep -Ri $* *; }
 
 # open all matching files with editor
 function grepvi() { $EDITOR $(grep $* * | cut -d : -f 1 | uniq); }
