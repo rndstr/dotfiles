@@ -39,6 +39,7 @@
   lw = whatchanged
   d = diff
   dc = diff --cached
+  changes = diff ..origin
   ds = stash show -u
   sm = submodule
   unstage = reset HEAD --
