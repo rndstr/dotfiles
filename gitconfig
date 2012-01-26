@@ -30,7 +30,7 @@
   pr = pull --rebase
   br = branch -v
   ci = commit
-  s = status
+  s = status -sb
   sl = stash list
   sp = stash pop
   sd = diff stash@{0}
@@ -39,8 +39,9 @@
   lw = whatchanged
   d = diff
   dc = diff --cached
-  changes = diff ..origin
+  changes = log -p ..origin
   ds = stash show -u
+  df = diff ..origin
   sm = submodule
   unstage = reset HEAD --
   undo = reset --soft HEAD^
