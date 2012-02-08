@@ -26,6 +26,7 @@
 [alias]
   a = commit --all
   ap = add --patch
+  cp = checkout --patch
   co = checkout
   pr = pull --rebase
   br = branch -v
