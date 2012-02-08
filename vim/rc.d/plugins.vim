@@ -51,6 +51,10 @@ nmap ,fb :FufBuffer<CR>
 nmap ,ft :FufBufferTag<CR>
 vmap ,px !xmllint --format -<CR>
 
+nmap <leader>vb :VCSBlame<CR>
+nmap <leader>vl :VCSLog<CR>
+nmap <leader>vd :VCSDiff<CR>
+
 """""""""""""""""""""""""""
 " gist
 let g:gist_clip_command = 'xclip -sel clip'
