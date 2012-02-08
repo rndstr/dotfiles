@@ -195,3 +195,17 @@ nnoremap <silent><C-h> :<C-u>call search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&\>\@
 nnoremap <silent><C-l> :<C-u>call search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&\>\@!\)\<Bar>\%$','W')<CR>
 inoremap <silent><C-h> <C-o>:call search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&\>\@!\)\<Bar>\%^','bW')<CR>
 inoremap <silent><C-l> <C-o>:call search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&\>\@!\)\<Bar>\%$','W')<CR>
+
+
+" Fast window resizing with +/- keys (horizontal); / and * keys (vertical)
+if bufwinnr(1)
+  map <kPlus> <C-W>+
+  map <kMinus> <C-W>-
+  map <kDivide> <c-w><
+  map <kMultiply> <c-w>>
+endif
+
+map <Up> <c-w>k<c-w>_<c-w><Bar>
+map <Down> <c-w>j<c-w>_<c-w><Bar>
+map <Left> <c-w>h<c-w>_<c-w><Bar>
+map <Right> <c-w>l<c-w>_<c-w><Bar>
