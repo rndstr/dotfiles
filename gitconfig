@@ -7,6 +7,10 @@
   editor = vim
 [merge]
   tool = gvimdiff
+[branch]
+  autosetuprebase = always
+[push]
+  default = upstream
 [color]
   ui = auto
   diff = auto
