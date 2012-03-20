@@ -1,4 +1,7 @@
-*.gz
-vim/rc.d/x-*
-vim/php/doc/*
-vim/.netrwhist
+/*.gz
+/vim/rc.d/x-*
+/vim/php/doc/*
+/vim/.netrwhist
+/vim/sessions/
+/vim/bundle/*
+!/vim/bundle/vundle/

@@ -3,6 +3,22 @@
 let g:xml_syntax_folding=1
 au FileType xml setlocal foldmethod=syntax
 
+"""""""""""""""""""""""""""
+" powerline
+let g:Powerline_symbols = 'fancy'
+
+"""""""""""""""""""""""""""
+" sessionman
+nmap <leader>sl :SessionList<CR>
+nmap <leader>ss :SessionSave<CR>
+nmap <leader>ss :SessionSaveAs<CR>
+
+"""""""""""""""""""""""""""
+" ctrlp
+let g:ctrlp_working_path_mode = 2
+nmap <leader>ff :CtrlP<CR>
+nmap <leader>fb :CtrlPBuffer<CR>
+nmap <leader>fm :CtrlPMRUiles<CR>
 
 " prolly should move this to ~/.vim/after/plugin/ ?
 
@@ -43,13 +59,13 @@ let g:fuf_keyOpenTabpage = '<C-t>'
 let g:fuf_keyOpenSplit = '<C-k>'
 let g:fuf_keyOpenVsplit = '<C-l>'
 
-nmap ,ff :FufFile<CR>
-nmap ,fc :FufCoverageFile<CR>
-nmap ,fl :FufLine<CR>
-nmap ,fh :FufHelp<CR>
-nmap ,fb :FufBuffer<CR>
-nmap ,ft :FufBufferTag<CR>
-vmap ,px !xmllint --format -<CR>
+"nmap ,ff :FufFile<CR>
+"nmap ,fc :FufCoverageFile<CR>
+"nmap ,fl :FufLine<CR>
+"nmap ,fh :FufHelp<CR>
+"nmap ,fb :FufBuffer<CR>
+"nmap ,ft :FufBufferTag<CR>
+
 
 nmap <leader>vb :VCSBlame<CR>
 nmap <leader>vl :VCSLog<CR>

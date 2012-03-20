@@ -1,12 +1,10 @@
 """""""""""""""""""""""""""""
 " general
-
 syntax on
 " colorscheme for terminal
 colorscheme rndstr
-
 set nocompatible
-filetype on
+filetype off " required for vundle
 set history=1000
 " to disable auto-folding in latex: filetype plugin off (there should be another way tho, no?)
 filetype indent on
@@ -14,6 +12,7 @@ filetype plugin on
 set winaltkeys=no
 set encoding=utf8
 set fileencoding=utf8
+
 
 """"""""""""""""""""""""""""
 " testing
@@ -39,43 +38,38 @@ set wildignore+=.git,.svn,.hg,**/cache/**
 
 set lsp=0 " space out a little more
 set ruler " display ruler
+set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
 set cmdheight=1 " height of command bar
 set relativenumber " line numbers are on
 set lz " lazyredraw, do not redrawy while running macros
 set backspace=2 " make backspace work normal
 set showcmd
 set scrolloff=4 " keep cursor away from top/bottom
+set showmatch " show matching brackets
+set matchtime=5 " how many tenths of a second to blink matahcing brackets for
+set laststatus=2 " always show the status line
+set wildmode=list:longest,full  " command <Tab> completion, list matches, then longest common part, then all.
+" display cues :set list
+set lcs=tab:>-,extends:$
 if has("gui_running")
   set cursorline
 endif
 
-
 """""""""""""""""""""""""""""
-" visual cues
-
-set showmatch " show matching brackets
-set matchtime=5 " how many tenths of a second to blink matahcing brackets for
-set statusline=%F%m%r%h%w\ [%{&ff}]\ %y\ %04v:%04l\ %=%p%%/%L\ [a\%03.3b,0x\%02.2B]
-set laststatus=2 " always show the status line
-" display cues :set list
-set lcs=tab:>-,extends:$
+" folding
+"   enable folding, but by default make it act like folding is off
+set foldenable
+set foldmethod=indent
+set foldlevel=100
+set fo=""
+set foldopen-=search " don't open folds when you search into them
+set foldopen-=undo " don't open folds when you undo stuff
+let g:DisableAutoPHPFolding = 1
 
 """""""""""""""""""""""""""""
 " formatting
 set hlsearch
 set incsearch " incremental search, do search/highlight as you type
-
-
-"""""""""""""""""""""""""""""
-" formatting
-
-" stop continuing comments when switching to insert mode
-set formatoptions-=o
-let g:PHP_autoformatcomment = 0
-
-
-"""""""""""""""""""""""""""""
-" tabs and indenting
 set ai " autoindent
 set si " smartindent
 set cindent " c-style indenting
@@ -85,13 +79,13 @@ set expandtab " no real tabs
 set nowrap " no wrapping of lines
 " highlight tabs
 
-
+" stop continuing comments when switching to insert mode
+set formatoptions-=o
+let g:PHP_autoformatcomment = 0
 
 """"""""""""""""""""""""""""
 " apps
 set grepprg=grep\ -nH\ $*
-" unset so K defaults to :help (man otherwise)
-set keywordprg=
 
 """""""""""""""""""""""""""""
 " file explorer
@@ -104,6 +98,73 @@ let g:winManagerWidth=35
 let g:winManagerWindowLayout = 'FileExplorer,TagsExplorer|BufExplorer'
 
 
+"""""""""""""""""""""""""""
+" abbrevations
+" :T = :tabedit
+command! -nargs=* -complete=file T tabedit <args>
+"nnoremap :e :tabedit
+nnoremap <silent> = :tabnext<CR>
+nnoremap <silent> + :tabprev<CR>
+nnoremap <silent> <C-tab> :tabs<CR>
+" go to file
+nnoremap gf <C-W>gf
+
+
+" always show the tabline
+set showtabline=2
+set tabpagemax=20
+
+"""""""""""""""""""""""""""""
+" vundle
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+" github
+Bundle 'scrooloose/nerdtree'
+Bundle 'sjl/gundo.vim'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-fugitive'
+Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/syntastic'
+Bundle 'spf13/PIV'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'Lokaltog/vim-easymotion'
+" vim-scripts
+Bundle 'L9'
+Bundle 'matchit.zip'
+Bundle 'sessionman.vim'
+" local bundles
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
+
+" try out
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'spf13/vim-colors'
+
+filetype plugin indent on
+
+
+" Brief help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle command are not allowed..
+
+
+"""""""""""""""""""""""""""
+" abbrevations
+iab xdate <c-r>=strftime("%Y-%m-%d")<cr>
+iab xdatetime <c-r>=strftime("%Y-%m-%d %H:%M:%S")<cr>
+iab xdatec <c-r>=strftime("%c")<cr>
+iab xcpp // -----------------------------------------------------------------------------<cr>
+iab xc /* ----------------------------------------------------------------------------- */<cr>
+
+iab functino function
+
 """"""""""""""""""""""""""""
 " mappings
 let mapleader = ","
@@ -115,6 +176,8 @@ nmap <leader>v :tabnew ~/.vimrc<CR>
 nmap <leader>cs :let @*=expand("%")<CR>
 nmap <leader>cp :let @*=expand("%:p")<CR>
 nmap <leader>cd :let @*=expand("%:p:h")<CR>
+
+vmap <leader>px !xmllint --format -<CR>
 
 nmap <leader>wp !opera http://php.net/<cword><CR>
 
