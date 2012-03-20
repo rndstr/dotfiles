@@ -75,6 +75,8 @@ if [ $IS_LOGIN_SHELL = 'yes' ]; then
     source $i
   done
 
+  set -o vi
+
   unset load_env
 fi
 
