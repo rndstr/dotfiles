@@ -14,12 +14,16 @@ nmap <leader>ss :SessionSave<CR>
 nmap <leader>ss :SessionSaveAs<CR>
 
 """""""""""""""""""""""""""
+" syntastic
+let g:syntastic_auto_jump=1
+
+"""""""""""""""""""""""""""
 " ctrlp
 let g:ctrlp_working_path_mode = 2
 let g:ctrlp_match_window_bottom = 0
 nmap <leader>ff :CtrlP<CR>
 nmap <leader>fb :CtrlPBuffer<CR>
-nmap <leader>fm :CtrlPMRUiles<CR>
+nmap <leader>fm :CtrlPMRUFiles<CR>
 
 " prolly should move this to ~/.vim/after/plugin/ ?
 

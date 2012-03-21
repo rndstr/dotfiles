@@ -137,6 +137,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'L9'
 Bundle 'matchit.zip'
 Bundle 'sessionman.vim'
+Bundle 'Indent-Guides'
 " local bundles
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
