@@ -67,8 +67,6 @@ alias eptlive="mplayer http://stream-eng.pokerstars.tv/pxpkrlive-live/pokerstars
 # &record
 alias reptlive="mplayer http://stream-eng.pokerstars.tv/pxpkrlive-live/pokerstarslive_eng_500k -dumpstream -dumpfile"
 
-
-
 # --- some functions ---
 function fbup { while [ $# -gt 0 ]; do cp -i "$1" "$1-"; shift; done; }
 
@@ -82,3 +80,9 @@ function grepvi() { $EDITOR $(grep $* * | cut -d : -f 1 | uniq); }
 
 # excludes .svn matches
 function grepsvn() { grep -R $* * | grep -v \.svn ; }
+
+function tunnel {
+  port=${1:-8080}
+  ssh -D $port -f -C -q -N f1sh.dyndns.org
+}
+
