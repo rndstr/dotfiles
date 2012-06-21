@@ -133,6 +133,7 @@ Bundle 'flazz/vim-colorschemes'
 Bundle 'godlygeek/csapprox'
 Bundle 'mileszs/ack.vim'
 Bundle 'majutsushi/tagbar'
+Bundle 'taxilian/VimDebugger'
 " vim-scripts
 Bundle 'L9'
 Bundle 'matchit.zip'
