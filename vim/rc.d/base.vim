@@ -151,6 +151,9 @@ Bundle 'spf13/vim-colors'
 filetype plugin indent on
 
 
+" overwrite PIV settings which does also wrap normal code lines.
+setlocal textwidth=115
+
 " Brief help
 " :BundleList          - list configured bundles
 " :BundleInstall(!)    - install(update) bundles
@@ -178,6 +181,7 @@ let mapleader = ","
 nmap <leader>s :source ~/.vimrc<CR>
 nmap <leader>g :source ~/.vimrc<CR>:source ~/.gvimrc<CR>
 nmap <leader>v :tabnew ~/.vimrc<CR>
+nmap <leader>c :tabnew ~/.vim/doc/cheatsheet.txt<CR>
 
 nmap <leader>cs :let @*=expand("%")<CR>
 nmap <leader>cp :let @*=expand("%:p")<CR>

@@ -21,6 +21,8 @@ let g:syntastic_auto_jump=1
 " ctrlp
 let g:ctrlp_working_path_mode = 2
 let g:ctrlp_match_window_bottom = 0
+let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_max_height = 30
 nmap <leader>ff :CtrlP<CR>
 nmap <leader>fb :CtrlPBuffer<CR>
 nmap <leader>fm :CtrlPMRUFiles<CR>
