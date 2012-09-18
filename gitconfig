@@ -54,4 +54,5 @@
   pur = !"git fetch -v origin; git fetch -v upstream; git rebase upstream/master"
   puh = push origin HEAD
   rc = rebase --continue
+  smui = submodule update --init
 
