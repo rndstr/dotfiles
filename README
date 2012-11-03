@@ -1,6 +1,6 @@
 DEPLOY
   git clone git://github.com/rndstr/dotfiles.git ~/.dotfiles
-  cd ~/.dotfiles && git checkout --track -b legacy origin/legacy
+  cd ~/.dotfiles
   git submodule init
   make -C ~/.dotfiles install
 
