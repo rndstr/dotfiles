@@ -1,0 +1,64 @@
+# copy selected text into both bufers
+Rxvt*VT100.translations: #override <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0)
+
+!  settings
+!Rxvt*background:   #483C32
+!Rxvt*background:   #36352E
+Rxvt*background: #000000
+Rxvt*foreground:   #dddddd
+Rxvt*transparent:  true
+Rxvt*shading:      23
+! how many percent to fade when it loses focus
+Rxvt*fading: 33
+!Rxvt*borderLess:   true
+!Rxvt*borderColor:  #ff0000
+
+!*font: -misc-fixed-medium-r-normal--13-120-75-75-c-80-iso8859-1
+Rxvt*font: -misc-fixed-medium-r-normal--13-120-75-75-c-80-iso10646-1
+
+Rxvt*autoWrap:     true
+Rxvt*cursorColor:  #fbe0a3
+Rxvt*jumpScroll:   true 
+Rxvt*multiScroll:  true
+Rxvt*underLine:    true
+
+Rxvt*scrollBar:    false
+Rxvt*saveLines:    32767
+
+! call with urxvt -fn '<fontstring>' to get utf-8
+!urxvt.boldFont: -misc-fixed-bold-r-normal--13-120-75-75-c-80-iso8859-1
+Rxvt*boldFont: -misc-fixed-bold-r-normal--13-120-75-75-c-80-iso10646-1
+Rxvt*geometry: 100x31
+Rxvt*termName: rxvt
+
+Rxvt*cutchars: `"()'*<>[]{|}
+Rxvt*perl-lib:         /usr/lib/urxvt/perl/
+Rxvt*perl-ext-common:  default,matcher
+Rxvt*matcher.button:   1
+Rxvt*urlLauncher: /usr/bin/chromium
+
+!Xcursor.theme: Vanilla-DMZ
+Xcursor.theme: Vanilla-DMZ-AA
+
+*color0:#000000
+!red
+*color1:#bf7276
+!green
+*color2:#aae069
+!yellow
+*color3:#ffeb5f
+*color4:#3c98c9
+*color5:#9a70b2
+!lightblue
+*color6:#93fcff
+*color7:#dbdbdb
+
+*color8:#6692af
+*color9:#e5505f
+*color10:#87bc87
+*color11:#e28322
+*color12:#1b85d6
+*color13:#ad73ba
+*color14:#338eaa
+*color15:#f4f4f4
+
