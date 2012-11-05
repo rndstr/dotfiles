@@ -75,7 +75,7 @@ set ai " autoindent
 set si " smartindent
 set cindent " c-style indenting
 set tabstop=2
-set shiftwidth=2
+set shiftwidth=4
 set expandtab " no real tabs
 set nowrap " no wrapping of lines
 " highlight tabs
