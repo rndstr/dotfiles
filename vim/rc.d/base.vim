@@ -12,6 +12,7 @@ filetype plugin on
 set winaltkeys=no
 set encoding=utf8
 set fileencoding=utf8
+set t_Co=256
 
 
 """"""""""""""""""""""""""""
