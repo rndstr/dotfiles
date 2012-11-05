@@ -1,3 +1,9 @@
 [submodule "vim/bundle/vundle"]
 	path = vim/bundle/vundle
 	url = https://github.com/gmarik/vundle.git
+[submodule "zsh/functions/zsh-git-prompt"]
+	path = zsh/functions/zsh-git-prompt
+	url = git://github.com/olivierverdier/zsh-git-prompt.git
+[submodule "zsh/git-prompt"]
+	path = zsh/git-prompt
+	url = git://github.com/olivierverdier/zsh-git-prompt.git

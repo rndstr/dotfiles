@@ -2,6 +2,7 @@
 DATE := $(shell date +%Y%m%d%H%M%S)
 DOTFILES_DIR := $(shell pwd)
 BASH_FILES := $(shell find bash/ -type f)
+ZSH_FILES := $(shell find zsh/ -type f)
 VIM_FILES := $(shell find vim/rc.d/ -type f)
 
 # Further dotfiles. If filename-HOSTNAME exists it takes precedence over default.
@@ -9,7 +10,7 @@ SINGLE_FILES = gitconfig screenrc dir_colors Xmodmap Xdefaults
 
 
 # will be backed up
-DEST_FILES := ~/.bashrc ~/.bash_aliases ~/.bash_logout \
+DEST_FILES := ~/.bashrc ~/.bash_aliases ~/.bash_logout ~/.zshrc \
 						 ~/.vimrc ~/.gvimrc \
 						 $(patsubst %,~/.%,$(SINGLE_FILES))
 
@@ -45,6 +46,7 @@ edit-single: $(SINGLE_FILES)
 
 install: $(DEST_FILES) backup-active
 	$(MAKE) install-bash
+	$(MAKE) install-zsh
 	$(MAKE) install-vim
 	$(MAKE) install-single
 
@@ -52,6 +54,14 @@ install-bash: $(BASH_FILES)
 	ln -sf $(DOTFILES_DIR)/bash/bashrc.sh ~/.bashrc
 	ln -sf $(DOTFILES_DIR)/bash/aliases.sh ~/.bash_aliases
 	ln -sf $(DOTFILES_DIR)/bash/logout.sh ~/.bash_logout
+
+install-zsh: $(ZSH_FILES)
+	ln -sf $(DOTFILES_DIR)/zsh/zshrc ~/.zshrc
+	if [ -L ~/.zsh ];then unlink ~/.zsh; fi
+	@if [ -d ~/.zsh ]; then \
+		mv ~/.zsh ~/.zsh-backup ; echo "##### NOTE: Existing ~/.zsh copied to ~/.zsh-backup #####"; \
+	fi
+	ln -nsf $(DOTFILES_DIR)/zsh ~/.zsh
 
 
 # Cannot just remove ~/.vim if it's a dir because we only made a backup in `install' target
