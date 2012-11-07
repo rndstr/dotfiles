@@ -74,7 +74,7 @@ set incsearch " incremental search, do search/highlight as you type
 set ai " autoindent
 set si " smartindent
 set cindent " c-style indenting
-set tabstop=2
+set tabstop=4
 set shiftwidth=4
 set expandtab " no real tabs
 set nowrap " no wrapping of lines
@@ -122,24 +122,31 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 " github
 Bundle 'scrooloose/nerdtree'
-Bundle 'sjl/gundo.vim'
+"Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-fugitive'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'spf13/PIV'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'Lokaltog/vim-easymotion'
 Bundle 'flazz/vim-colorschemes'
-Bundle 'godlygeek/csapprox'
-Bundle 'mileszs/ack.vim'
+"Bundle 'godlygeek/csapprox'
 Bundle 'majutsushi/tagbar'
-Bundle 'taxilian/VimDebugger'
+"Bundle 'taxilian/VimDebugger'
+
+"""""
+" check the fuck out
+"Bundle 'tpope/vim-fugitive'
+"Bundle 'mileszs/ack.vim'
+"Bundle 'sessionman.vim'
+"Bundle 'Lokaltog/vim-easymotion'
+
 " vim-scripts
 Bundle 'L9'
 Bundle 'matchit.zip'
-Bundle 'sessionman.vim'
 Bundle 'Indent-Guides'
+
+
+
 " local bundles
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
@@ -147,7 +154,7 @@ endif
 
 " try out
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'spf13/vim-colors'
+"Bundle 'spf13/vim-colors'
 
 filetype plugin indent on
 
