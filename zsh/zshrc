@@ -1,3 +1,12 @@
+autoload -Uz compinit
+compinit
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=100000
+setopt extended_history
+setopt hist_ignore_dups
+setopt hist_ignore_space
+
 autoload -U colors
 colors
 
@@ -24,15 +33,9 @@ export PATH="/usr/share/perl5/vendor_perl/auto/share/dist/Cope:$PATH"
 export PATH="$PATH:/usr/local/bin:${HOME}/.dotfiles/bin:${HOME}/bin"
 
 
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=100000
 bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/rndstr/.zshrc'
 
-autoload -Uz compinit
-compinit
 # End of lines added by compinstall

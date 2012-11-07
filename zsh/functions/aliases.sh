@@ -31,3 +31,6 @@ alias sr="screen -d -r"
 alias sx="screen -x"
 
 alias psg="ps -awef |grep"
+
+function f { find . -iname '*${*}*'; }
+function g { grep -Ri $* *; }
