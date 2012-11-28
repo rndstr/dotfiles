@@ -9,7 +9,7 @@ Rxvt*foreground:   #dddddd
 Rxvt*transparent:  true
 Rxvt*shading:      23
 ! how many percent to fade when it loses focus
-Rxvt*fading: 33
+Rxvt*fading: 10
 !Rxvt*borderLess:   true
 !Rxvt*borderColor:  #ff0000
 
@@ -40,25 +40,36 @@ Rxvt*urlLauncher: /usr/bin/chromium
 !Xcursor.theme: Vanilla-DMZ
 Xcursor.theme: Vanilla-DMZ-AA
 
-*color0:#000000
-!red
-*color1:#bf7276
-!green
-*color2:#aae069
-!yellow
-*color3:#ffeb5f
-*color4:#3c98c9
-*color5:#9a70b2
-!lightblue
-*color6:#93fcff
-*color7:#dbdbdb
+! Black
+*color0:   #111111
+*color8:   #666666
 
-*color8:#6692af
-*color9:#e5505f
-*color10:#87bc87
-*color11:#e28322
-*color12:#1b85d6
-*color13:#ad73ba
-*color14:#338eaa
-*color15:#f4f4f4
+! Red
+*color1:   rgb:d3/62/65
+*color9:   rgb:ef/81/71
 
+! Green
+*color2:   #aece91
+*color10:  #cfefb3
+
+! Yellow
+*color3:   rgb:e7/e1/8c
+*color11:  rgb:ff/f7/96
+
+! Blue
+*color4:   #5297cf
+*color12:  #74b8ef
+
+! Magenta
+*color5:   #963c59
+*color13:  #b85e7b
+
+! Cyan
+*color6:   #5E7175
+*color14:  #A3BABF
+
+! White
+*color7:   #bebebe
+*color15:  #ffffff
+
+! vim: et sw=2 syn=xdefaults
