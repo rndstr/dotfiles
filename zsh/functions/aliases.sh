@@ -31,6 +31,7 @@ alias sr="screen -d -r"
 alias sx="screen -x"
 
 alias psg="ps -awef |grep"
+alias diff="colordiff -bBur"
 
-function f { find . -iname '*${*}*'; }
+function f { find . -iname "*$1*"; }
 function g { grep -Ri $* *; }
