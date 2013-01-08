@@ -1,0 +1,6 @@
+alias s.start="systemctl start"
+alias s.restart="systemctl restart"
+alias s.on="systemctl enable"
+alias s.off="systemctl disable"
+alias s.status="systemctl status"
+alias s.stop="systemctl stop"
