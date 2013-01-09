@@ -35,6 +35,7 @@ export PATH="$PATH:/usr/local/bin:${HOME}/.dotfiles/bin:${HOME}/bin"
 
 
 bindkey -v
+bindkey "^R" history-incremental-search-backward
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/rndstr/.zshrc'
