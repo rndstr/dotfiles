@@ -41,7 +41,9 @@ set lsp=0 " space out a little more
 set ruler " display ruler
 set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
 set cmdheight=1 " height of command bar
-set relativenumber " line numbers are on
+if exists('+relativenumber')
+    set relativenumber " line numbers are on
+endif
 set lz " lazyredraw, do not redrawy while running macros
 set backspace=2 " make backspace work normal
 set showcmd
