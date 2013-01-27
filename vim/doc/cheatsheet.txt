@@ -175,7 +175,11 @@ REGISTERS                                       *cs-registers*
 :reg
 "a to "z        Named
 "A to "Z        Append to lowercase
+"0              Most recent yank operation
+"1 to "9        Most recent delete operation
+"-              Small delete register (deletions that were less than one line)
 "_              /dev/null
+:registers      Show contents of all registers
 <reg><action>   Store <action> (y/d) in <reg>
 
 [I] ^r<reg> Insert contents of <reg>
@@ -194,6 +198,7 @@ INSERTS                                         *cs-insert*
 ^t / ^d     Inserts/removes one indent at start of line
 
 MISC                                            *cs-misc*
+<number>i       Repeat insertion <number> times
 gi              Insert mode where you left it last time
 ^g / g^g        Where am I?
 << / >>         Indent
