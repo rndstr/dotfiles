@@ -4,4 +4,4 @@ export DOTFILES_ENV_DIST='arch'
 export DOTFILES_ENV_DOMAIN='tank'
 export DOTFILES_ENV_TYPE='laptop'
 
-export PATH=$PATH:$HOME/android-sdks/platform-tools
+export PATH=$PATH:$HOME/android-sdks/platform-tools:$HOME/.gem/ruby/1.9.1/bin

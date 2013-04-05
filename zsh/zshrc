@@ -13,6 +13,9 @@ colors
 # allow functions in prompt
 setopt PROMPT_SUBST
 
+# no beep
+xset -b
+
 # load functions
 for i in ~/.dotfiles/zsh/functions/*; do 
     source $i
