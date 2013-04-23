@@ -1,11 +1,12 @@
 autoload -Uz compinit
 compinit
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=100000
+HISTSIZE=100000
+SAVEHIST=1000
 setopt extended_history
 setopt hist_ignore_dups
 setopt hist_ignore_space
+setopt INC_APPEND_HISTORY
 
 autoload -U colors
 colors

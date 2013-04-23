@@ -35,3 +35,7 @@ alias diff="colordiff -bBur"
 
 function f { find . -iname "*$1*"; }
 function g { grep -Ri $* *; }
+
+eptlive="mplayer http://stream-eng.pokerstars.tv/pxpkrlive-live/pokerstarslive_eng_500k"
+reptlive="mplayer http://stream-eng.pokerstars.tv/pxpkrlive-live/pokerstarslive_eng_500k -dumpstream -dumpfile"
+
