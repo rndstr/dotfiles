@@ -24,7 +24,7 @@
   local = yellow
   remote = green
 [web]
-  browser = opera
+  browser = chromium
 [diff]
   mnemonicprefix = true
 [alias]
