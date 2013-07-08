@@ -126,20 +126,21 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 " github
 Bundle 'scrooloose/nerdtree'
-"Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-surround'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'spf13/PIV'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'flazz/vim-colorschemes'
-"Bundle 'godlygeek/csapprox'
 Bundle 'majutsushi/tagbar'
+Bundle 'tpope/vim-fugitive'
+"
+"Bundle 'sjl/gundo.vim'
+"Bundle 'godlygeek/csapprox'
 "Bundle 'taxilian/VimDebugger'
 
 """""
 " check the fuck out
-"Bundle 'tpope/vim-fugitive'
 "Bundle 'mileszs/ack.vim'
 "Bundle 'sessionman.vim'
 "Bundle 'Lokaltog/vim-easymotion'
