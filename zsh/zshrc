@@ -15,7 +15,7 @@ colors
 setopt PROMPT_SUBST
 
 # no beep
-xset -b
+setterm -blength 0
 
 # load functions
 for i in ~/.dotfiles/zsh/functions/*; do 
