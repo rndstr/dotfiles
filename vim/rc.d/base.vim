@@ -73,6 +73,8 @@ let g:DisableAutoPHPFolding = 1
 " formatting
 set hlsearch
 set incsearch " incremental search, do search/highlight as you type
+set ignorecase " case insensitive search
+set smartcase " all smaller case search is insensitive, combined with upper case letters is sensitive
 set ai " autoindent
 set si " smartindent
 set cindent " c-style indenting
