@@ -41,6 +41,7 @@ set lsp=0 " space out a little more
 set ruler " display ruler
 set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
 set cmdheight=1 " height of command bar
+set number
 if exists('+relativenumber')
     set relativenumber " line numbers are on
 endif
@@ -228,17 +229,6 @@ else " no gui
   endif
 endif
 
-function! ToggleNumberMode()
-    if &rnu == 1
-        set nu
-    elseif &nu == 1
-        set nonu
-    else
-        set rnu
-    endif
-endfunc
-
-nnoremap <C-n> :call ToggleNumberMode()<CR>
 nnoremap <C-p> :set invpaste paste?<CR>
 
 function! ToggleShiftwidth()

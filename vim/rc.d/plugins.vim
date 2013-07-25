@@ -54,26 +54,7 @@ endif
 
 
 """""""""""""""""""""""""""
-" fuzzyfinder
-let g:fuf_file_exclude = '\v\(~|-)$|\.(o|exe|dll|bak|orig|sw[po])$|(^|[/\\])\.(hg|git|bzr|svn)($|[/\\])'
-let g:fuf_coveragefile_exclude = '\v\(~|-)$|\.(o|exe|dll|bak|orig|sw[po])$|(^|[/\\])\.(hg|git|bzr|svn)|cache($|[/\\])'
-let g:fuf_coveragefile_globPatterns = ['~/**/.*', '~/**/*']
-let g:fuf_dir_exclude = '\v(^|[/\\])(\.(hg|git|bzr|svn)|cache)($|[/\\])'
-let g:fuf_maxMenuWidth = 300
-
-let g:fuf_keyOpen = '<CR>'
-let g:fuf_keyOpenTabpage = '<C-t>'
-let g:fuf_keyOpenSplit = '<C-k>'
-let g:fuf_keyOpenVsplit = '<C-l>'
-
-"nmap ,ff :FufFile<CR>
-"nmap ,fc :FufCoverageFile<CR>
-"nmap ,fl :FufLine<CR>
-"nmap ,fh :FufHelp<CR>
-"nmap ,fb :FufBuffer<CR>
-"nmap ,ft :FufBufferTag<CR>
-
-
+" vcscommand
 nmap <leader>vb :VCSBlame<CR>
 nmap <leader>vl :VCSLog<CR>
 nmap <leader>vd :VCSDiff<CR>
