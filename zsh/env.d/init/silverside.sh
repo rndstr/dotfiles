@@ -4,4 +4,13 @@ export DOTFILES_ENV_DIST='arch'
 export DOTFILES_ENV_DOMAIN='tank'
 export DOTFILES_ENV_TYPE='laptop'
 
-export PATH=$PATH:$HOME/android-sdks/platform-tools:$HOME/.gem/ruby/1.9.1/bin
+PATH=$PATH:$HOME/android-sdks/platform-tools
+
+
+# rvm
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+[[ -r "$HOME/.rvm/scripts/completion" ]] && source "$HOME/.rvm/scripts/completion"
+PS1="\$($HOME/.rvm/bin/rvm-prompt) $PS1"
+
+PATH=/usr/local/heroku/bin:$PATH
