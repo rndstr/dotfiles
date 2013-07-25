@@ -15,12 +15,14 @@ colors
 setopt PROMPT_SUBST
 
 # no beep
-setterm -blength 0
+xset -b
 
 # load functions
 for i in ~/.dotfiles/zsh/functions/*; do 
     source $i
 done
+
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
 export EDITOR="vim"
 export BROWSER="chromium"
@@ -45,3 +47,4 @@ bindkey "^R" history-incremental-search-backward
 zstyle :compinstall filename '/home/rndstr/.zshrc'
 
 # End of lines added by compinstall
+
