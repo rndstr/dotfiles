@@ -63,7 +63,7 @@ nmap <leader>vd :VCSDiff<CR>
 " gist
 let g:gist_clip_command = 'xclip -sel clip'
 let g:gist_detect_filetype = 1
-let g:gist_browser_command = 'opera %URL% &'
+let g:gist_browser_command = 'chromium %URL% &'
 
 
 """"""""""""""""""""""""
