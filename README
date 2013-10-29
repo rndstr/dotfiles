@@ -1,7 +1,7 @@
 DEPLOY
   git clone git://github.com/rndstr/dotfiles.git ~/.dotfiles
   cd ~/.dotfiles
-  git submodule init
+  git submodule update --init
   make -C ~/.dotfiles install
 
 
