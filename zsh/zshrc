@@ -15,7 +15,10 @@ colors
 setopt PROMPT_SUBST
 
 # no beep
-command -v xset >/dev/null 2>&1 && { xset -b 2>/dev/null; xset r rate 250 50 2>/dev/null }
+command -v xset >/dev/null 2>&1 && {
+    xset -b 2>/dev/null #turn off beep
+    xset r rate 250 50 2>/dev/null #faster kbd
+}
 
 # load functions
 for i in ~/.dotfiles/zsh/functions/*; do 

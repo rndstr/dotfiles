@@ -36,6 +36,11 @@ alias diff="colordiff -bBur"
 function f { find . -iname "*$1*"; }
 function g { grep -Ri $* *; }
 
-eptlive="mplayer http://stream-eng.pokerstars.tv/pxpkrlive-live/pokerstarslive_eng_500k"
-reptlive="mplayer http://stream-eng.pokerstars.tv/pxpkrlive-live/pokerstarslive_eng_500k -dumpstream -dumpfile"
+alias eptlive="mplayer http://stream-eng.pokerstars.tv/pxpkrlive-live/pokerstarslive_eng_500k"
+alias reptlive="mplayer http://stream-eng.pokerstars.tv/pxpkrlive-live/pokerstarslive_eng_500k -dumpstream -dumpfile"
+
+
+alias rake="noglob rake"
+
+function c { echo "scale=3; $*" | bc -l; }
 
