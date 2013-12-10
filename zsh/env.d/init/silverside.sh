@@ -15,3 +15,6 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PS1="\$($HOME/.rvm/bin/rvm-prompt) $PS1"
 
 PATH=/usr/local/heroku/bin:$PATH
+
+
+alias mplayer1="mplayer -geometry 1650:50"
