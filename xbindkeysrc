@@ -1,7 +1,3 @@
-"xlock"
-    m:0x0 + c:160
-    XF86ScreenSaver
-
 "xrandr-toggle"
     m:0x0 + c:235
     XF86Display
