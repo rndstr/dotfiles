@@ -1,0 +1,64 @@
+#!/bin/bash
+#
+# Copy JPGs and their CR2 counterfiles to their EXIF datetime name
+#
+#  IMG_3562.JPG
+#  IMG_3563.CR2
+#
+#  -> target/20120511_050755.jpg
+#  -> target/20120511_050755.cr2
+#
+#
+# NOTE won't work on OS X due to readlink
+#
+
+target=$1
+targetreal=$(readlink -m "$target")
+
+if [[ -z "$target" || ! -d $target ]]; then
+  echo "ERROR: no target given or target not existing."
+  echo "usage: $(basename $0) <targetdir>"
+  exit
+fi
+
+function copeh {
+  from=$1
+  toname=$2
+  toext=$3
+  touchdate=$4
+  i=1
+  if [ -f $toname.$toext ]; then
+    while [ -f "${toname}_${i}.$toext" ]; do
+      i=$((i+1))
+    done
+    toname="${toname}_${i}"
+  fi
+  cp -i $from $toname.$toext
+  touch -t $touchdate $toname.$toext
+  echo " -> $toname.$toext"
+}
+
+find -iname '*.jpg' | while read jpg; do
+  echo $jpg
+  jpgreal=$(readlink -m "$jpg")
+  if [[ $jpgreal == $targetreal* ]]; then
+    echo "Skip file in target dir: $jpg"
+    continue
+  fi
+
+  cr2=${jpg%JPG}CR2
+  # 2012:05:11 05:07:55
+  datetime=$(exiv2 -g Exif.Image.DateTime -Pv $jpg)
+  touchdate=$(echo $datetime | sed 's/[: ]//g' | sed 's/\(..$\)/\.\1/')
+  filedate=$(echo $datetime | sed 's/[:]//g' | sed 's/[ ]/_/g')
+  touch -t $touchdate $jpg
+  touch -t $touchdate $cr2
+
+  if [ -n "$target" ]; then
+    copeh $jpg $target/$filedate jpg $touchdate
+    copeh $cr2 $target/$filedate cr2 $touchdate
+  else
+    echo
+  fi
+done
+
