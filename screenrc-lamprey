@@ -37,9 +37,8 @@ msgwait 5
 
 caption always "%{= Bw}%-Lw%{=u kw}%50>%f* %t%{-}%+Lw%<"
 #hardstatus alwayslastline "%{wk} %l %=%Y%m%d %c "
-backtick 1 0 0 $HOME/.dotfiles/bin/traffic
-backtick 2 300 300 /usr/local/bin/gmailcount.sh
-hardstatus alwayslastline "%{=b rW} %H %{= Wk} %l -- %1` %{rW} ggl%{k}%2` %=%Y%m%d %c "
+backtick 1 0 0 $HOME/.dotfiles/bin/traffic wan
+hardstatus alwayslastline "%{=b rW} %H %{= Wk} %l -- %1` %{rW} %=%Y%m%d %c "
 
 
 # bindings, press ^a and key
