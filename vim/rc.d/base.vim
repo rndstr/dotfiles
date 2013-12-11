@@ -103,6 +103,9 @@ let g:explWinSize=35
 let g:winManagerWidth=35
 let g:winManagerWindowLayout = 'FileExplorer,TagsExplorer|BufExplorer'
 
+"""""""""""""""""""""""""""
+" auto commands
+au BufEnter *.rb :set tabstop=2 shiftwidth=2
 
 """""""""""""""""""""""""""
 " abbrevations
@@ -229,7 +232,15 @@ else " no gui
   endif
 endif
 
-nnoremap <C-p> :set invpaste paste?<CR>
+function! ToggleNumberMode()
+   if &rnu == 1
+        set nornu
+    else
+        set rnu
+    endif
+endfunc
+nnoremap <C-n> :call ToggleNumberMode()<CR>
+
 
 function! ToggleShiftwidth()
   if &shiftwidth == 4
@@ -238,9 +249,11 @@ function! ToggleShiftwidth()
     set shiftwidth=4 tabstop=4 shiftwidth?
   endif
 endfunction
-
 nnoremap <silent> <C-i> <Esc>:call ToggleShiftwidth()<CR>
 
+
+
+nnoremap <C-p> :set invpaste paste?<CR>
 
 " paste and reformat/reindent
 " this seems to do paste stuff whenever i open a file on certain machines
