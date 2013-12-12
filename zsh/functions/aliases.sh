@@ -33,8 +33,8 @@ alias sx="screen -x"
 alias psg="ps -awef |grep"
 alias diff="colordiff -bBur"
 
-function f { find . -iname "*$1*"; }
-function g { grep -Ri $* *; }
+f() { find . -iname "*$1*"; }
+g() { grep -Ri $* *; }
 
 alias eptlive="mplayer http://stream-eng.pokerstars.tv/pxpkrlive-live/pokerstarslive_eng_500k"
 alias reptlive="mplayer http://stream-eng.pokerstars.tv/pxpkrlive-live/pokerstarslive_eng_500k -dumpstream -dumpfile"
@@ -42,11 +42,11 @@ alias reptlive="mplayer http://stream-eng.pokerstars.tv/pxpkrlive-live/pokerstar
 
 alias rake="noglob rake"
 
-function c { echo "scale=3; $*" | bc -l; }
+c() { echo "scale=3; $*" | bc -l; }
 
 alias fmp3="cat /20media/audio/music/.listing | grep -i"
-function fmovie() {
+fmovie() {
   cat /20media/video/.movielisting* | grep -i $*
-  lsre -ld /0Amovie 0 -ld /0Amovie/ARCHIVE/ 1 -ld /21movie 0 -ld /22movie 0 -ld /23movie 0 -ld /24movie 0 | grep -i $*
+  lsre -ld /0Amovie 0 -ld /0Amovie/ARCHIVE/ 1 -ld /21movie 0 -ld /22movie 0 -ld /23movie 0 -ld /24movie 0 -ld /26movie | grep -i $*
 }
 
