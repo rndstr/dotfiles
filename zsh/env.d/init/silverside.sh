@@ -5,7 +5,7 @@ export DOTFILES_ENV_DOMAIN='tank'
 export DOTFILES_ENV_TYPE='laptop'
 
 export ANDROID_HOME=$HOME/apps/android-studio/sdk
-PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$HOME/apps/android-studio/bin:$HOME/apps/android-studio/genymotion
+PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$HOME/apps/android-studio/bin
 
 
 # rvm
