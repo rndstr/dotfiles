@@ -46,7 +46,6 @@ c() { echo "scale=3; $*" | bc -l; }
 
 alias fmp3="cat /20media/audio/music/.listing | grep -i"
 fmovie() {
-  cat /20media/video/.movielisting* | grep -i $*
-  lsre -ld /0Amovie 0 -ld /0Amovie/ARCHIVE/ 1 -ld /21movie 0 -ld /22movie 0 -ld /23movie 0 -ld /24movie 0 -ld /26movie | grep -i $*
+  lsre -ld /21movie 0 -ld /22movie 0 -ld /23movie 0 -ld /24movie 0 -ld /26movie 0| grep -i $*
 }
 
