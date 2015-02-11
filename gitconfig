@@ -5,6 +5,7 @@
 [core]
   whitespace = trailing-space,space-before-tab,cr-at-eol,tab-in-indent
   editor = vim
+  excludesfile = '~/.gitignore'
 [merge]
   tool = gvimdiff
 [branch]
@@ -41,6 +42,7 @@
   sd = diff stash@{0}
   lg = log --graph --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)%an%Creset'
   li = log --graph --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %Cgreen(%ci) %C(blue)%an%Creset'
+  lc = log --graph --pretty=format:'%C(yellow)%d%Creset %s'
   lp = log -p
   lw = whatchanged
   d = diff
