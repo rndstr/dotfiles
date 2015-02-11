@@ -1,3 +1,6 @@
+alias audio.hdmi='pacmd set-card-profile 0 output:hdmi-stereo+input:analog-stereo'
+alias audio.analog='pacmd set-card-profile 0 output:analog-stereo+input:analog-stereo'
+
 
 alias pm="sudo pacman"
 
