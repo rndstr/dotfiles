@@ -138,6 +138,7 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'majutsushi/tagbar'
 Bundle 'tpope/vim-fugitive'
+Bundle 'groenewege/vim-less'
 "
 "Bundle 'sjl/gundo.vim'
 "Bundle 'godlygeek/csapprox'
