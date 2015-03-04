@@ -19,12 +19,12 @@ return {
 --    fg_focus      = "#ffffff",
 --    fg_urgent     = "#111111",
 --
-    bg_normal     = "#222233",
-    bg_focus      = "#0685b6",
+    bg_normal     = "#222222",
+    bg_focus      = "#ff6600",
     bg_urgent     = "#ffdd00",
 
     fg_normal     = "#eeeeff",
-    fg_focus      = "#222233",
+    fg_focus      = "#222222",
     fg_urgent     = "#111111",
 
     fg_widget_value_important = "#444444",
@@ -32,8 +32,8 @@ return {
     fg_widget_clock = "#ff0000",
 
     border_width  = 5,
-    border_normal = "#222233",
-    border_focus  = "#e2e2e2",
+    border_normal = "#222222",
+    border_focus  = "#ff6600",
 
     taglist_squares_sel    = "~/.config/awesome/themes/rndstr/tasklist_f.png",
     taglist_squares_unsel  = "~/.config/awesome/themes/rndstr/tasklist_u.png",
