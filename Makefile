@@ -85,6 +85,8 @@ install-single: $(SINGLE_FILES)
 		fi \
 	done
 
+install-autolink: autolink-$(shell hostname)
+	@sh autolink $^
 
 clean:
 	-rm backup-dotfiles-*.tar.gz

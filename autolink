@@ -1,0 +1,8 @@
+#!/bin/sh
+while read -r line; do
+    src=$(echo $line | cut -d " " -f 1)
+    dst=$(echo $line | cut -d " " -f 2)
+    [[ ! -d $(dirname $HOME/$dst) ]] && mkdir -p $(dirname $HOME/$dst)
+    echo "ln -s $HOME/.dotfiles/$src $HOME/$dst"
+    /usr/bin/ln -s $HOME/.dotfiles/$src $HOME/$dst
+done <$1
