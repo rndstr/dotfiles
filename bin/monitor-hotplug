@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+# Stacks external monitors on top of the integrated screen
+#
+integrated=LVDS1
+cmd="$(which xrandr) --output $integrated --auto"
+previous=$integrated
+
+IFS=$'\n'
+for l in $(xrandr | grep connected); do
+    output=${l%% *}
+    if [[ $output != $integrated ]]; then
+        if [[ $l == *"disconnected"* ]]; then
+            cmd="$cmd --output $output --off"
+        else
+            cmd="$cmd --output $output --auto --above $previous"
+            previous=$output
+        fi
+    fi
+done
+
+eval $cmd
