@@ -47,7 +47,7 @@ end
 -- beautiful.init("/usr/share/awesome/themes/sky/theme.lua")
 beautiful.init("/home/rndstr/.config/awesome/themes/rndstr/rndstr.lua")
 for s = 1, screen.count() do
-	gears.wallpaper.maximized(beautiful.wallpaper, s, true)
+	gears.wallpaper.maximized(beautiful.wallpaper, s, false)
 end
 
 -- This is used later as the default terminal and editor to run.
@@ -124,11 +124,11 @@ separator:set_text(" • ")
 --  Network usage widget
 -- Initialize widget
 -- Register widget
-netwidget = wibox.widget.textbox()
+--netwidget = wibox.widget.textbox()
 --vicious.register(netwidget, vicious.widgets.net, '${wlan0 down_kb}K/${wlan0 up_kb}K', 3)
-vicious.register(netwidget, vicious.widgets.net, function (widget, args)
-    return string.format("%4dK%4dK", args["{wlan0 up_kb}"], args["{wlan0 down_kb}"])
-end)
+--vicious.register(netwidget, vicious.widgets.net, function (widget, args)
+--    return string.format("%4dK%4dK", args["{wlan0 up_kb}"], args["{wlan0 down_kb}"])
+--end)
 
 vcpu = wibox.widget.textbox()
 vicious.register(vcpu, vicious.widgets.cpu, function (widget, args)
@@ -234,8 +234,8 @@ for s = 1, screen.count() do
     right_layout:add(vthermal)
     right_layout:add(separator)
     right_layout:add(vmem)
-    right_layout:add(separator)
-    right_layout:add(netwidget)
+    --right_layout:add(separator)
+    --right_layout:add(netwidget)
     right_layout:add(separator)
     if s == 1 then right_layout:add(wibox.widget.systray()) end
     right_layout:add(separator)

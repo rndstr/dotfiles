@@ -42,7 +42,7 @@ return {
     titlebar_close_button_normal = "/usr/share/awesome/themes/default/titlebar/close_normal.png",
     titlebar_close_button_focus  = "/usr/share/awesome/themes/default/titlebar/close_focus.png",
 
-    wallpaper = "~/.config/awesome/themes/rndstr/wallpaper/shark.png",
+    wallpaper = "~/.config/awesome/themes/rndstr/wallpaper/la.jpg",
     menu_submenu_icon = "/usr/share/awesome/themes/default/submenu.png",
     awesome_icon = "/home/rndstr/.config/awesome/themes/rndstr/floating.png"
     
