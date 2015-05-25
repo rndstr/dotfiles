@@ -58,4 +58,5 @@
   puh = push origin HEAD
   rc = rebase --continue
   smui = submodule update --init
+  rbi = rebase -i HEAD~2
 
