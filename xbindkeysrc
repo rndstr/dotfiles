@@ -19,3 +19,11 @@
     m:0x0 + c:248
     NoSymbol
 
+"amixer -D pulse set Master toggle"
+    m:0x0 + c:121
+    XF86AudioMute
+
+"~/.dotfiles/bin/monitor-hotplug"
+    m:0x0 + c:220
+    XF86WebCam
+
