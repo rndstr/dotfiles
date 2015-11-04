@@ -42,6 +42,8 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 export PATH="/usr/share/perl5/vendor_perl/auto/share/dist/Cope:$PATH"
 export PATH="$PATH:/usr/local/bin:${HOME}/.dotfiles/bin:${HOME}/bin"
 
+export NVM_DIR="/home/rndstr/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 bindkey -v
 bindkey "^R" history-incremental-search-backward
