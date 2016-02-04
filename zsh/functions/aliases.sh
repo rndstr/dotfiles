@@ -3,6 +3,7 @@ alias audio.analog='pacmd set-card-profile 0 output:analog-stereo+input:analog-s
 
 
 alias pm="sudo pacman"
+alias g="git"
 
 alias ls="ls -Fh --color=auto" # default ls options
 alias la="ls -la"
@@ -37,7 +38,7 @@ alias psg="ps -awef |grep"
 alias diff="colordiff -bBur"
 
 f() { find . -iname "*$1*"; }
-g() { grep -Ri $* *; }
+gr() { grep -Ri $* *; }
 
 alias eptlive="mplayer http://stream-eng.pokerstars.tv/pxpkrlive-live/pokerstarslive_eng_500k"
 alias reptlive="mplayer http://stream-eng.pokerstars.tv/pxpkrlive-live/pokerstarslive_eng_500k -dumpstream -dumpfile"
