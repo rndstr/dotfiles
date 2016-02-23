@@ -19,8 +19,16 @@ return {
 --    fg_focus      = "#ffffff",
 --    fg_urgent     = "#111111",
 --
-    bg_normal     = "#222222",
-    bg_focus      = "#ff6600",
+--    bg_normal     = "#222222",
+--    bg_focus      = "#ff6600",
+--    bg_urgent     = "#ffdd00",
+
+--   fg_normal     = "#eeeeff",
+--   fg_focus      = "#222222",
+--    fg_urgent     = "#111111",
+
+    bg_normal     = "#000000",
+    bg_focus      = "#e74c3c",
     bg_urgent     = "#ffdd00",
 
     fg_normal     = "#eeeeff",
@@ -33,7 +41,7 @@ return {
 
     border_width  = 5,
     border_normal = "#222222",
-    border_focus  = "#ff6600",
+    border_focus  = "#e74c3c",
 
     taglist_squares_sel    = "~/.config/awesome/themes/rndstr/tasklist_f.png",
     taglist_squares_unsel  = "~/.config/awesome/themes/rndstr/tasklist_u.png",
@@ -42,7 +50,7 @@ return {
     titlebar_close_button_normal = "/usr/share/awesome/themes/default/titlebar/close_normal.png",
     titlebar_close_button_focus  = "/usr/share/awesome/themes/default/titlebar/close_focus.png",
 
-    wallpaper = "~/.config/awesome/themes/rndstr/wallpaper/la.jpg",
+    wallpaper = "~/.config/awesome/themes/rndstr/wallpaper/palette.png",
     menu_submenu_icon = "/usr/share/awesome/themes/default/submenu.png",
     awesome_icon = "/home/rndstr/.config/awesome/themes/rndstr/floating.png"
     
