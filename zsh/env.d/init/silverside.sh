@@ -4,9 +4,11 @@ export DOTFILES_ENV_DIST='arch'
 export DOTFILES_ENV_DOMAIN='tank'
 export DOTFILES_ENV_TYPE='laptop'
 
+export GOPATH=/home/rndstr/dev/golang
 export ANDROID_HOME=$HOME/apps/android-sdk
 PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$HOME/apps/android-studio/bin
 PATH=$PATH:$HOME/.gem/ruby/2.1.0/bin
+PATH=$PATH:$GOPATH/bin
 
 
 # rvm
