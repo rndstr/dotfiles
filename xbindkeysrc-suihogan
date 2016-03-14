@@ -23,7 +23,7 @@
     m:0x0 + c:121
     XF86AudioMute
 
-"~/.dotfiles/bin/monitor-hotplug LVDS1"
+"~/.dotfiles/bin/monitor-hotplug eDP1"
     m:0x0 + c:220
     XF86WebCam
 

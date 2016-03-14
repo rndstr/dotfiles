@@ -6,7 +6,7 @@
 #   KERNEL=="card0", ACTION=="change", SUBSYSTEM=="drm", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/rndstr/.Xauthority", RUN+="/home/rndstr/.dotfiles/bin/monitor-hotplug"
 #
 
-integrated=LVDS1
+integrated=$*
 cmd="$(which xrandr) --output $integrated --auto"
 previous=$integrated
 
