@@ -1,4 +1,4 @@
-# copy selected text into both bufers
+! copy selected text into both bufers
 Rxvt*VT100.translations: #override <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0)
 
 !  settings
@@ -12,26 +12,22 @@ Rxvt*shading:      23
 Rxvt*fading: 10
 !Rxvt*borderLess:   true
 !Rxvt*borderColor:  #ff0000
-
-!*font: -misc-fixed-medium-r-normal--13-120-75-75-c-80-iso8859-1
-Rxvt*font: -misc-fixed-medium-r-normal--13-120-75-75-c-80-iso10646-1
+Rxvt*font: xft:DejaVuSansMono:size=7
 
 Rxvt*autoWrap:     true
 Rxvt*cursorColor:  #fbe0a3
-Rxvt*jumpScroll:   true 
+Rxvt*jumpScroll:   true
 Rxvt*multiScroll:  true
 Rxvt*underLine:    true
 
 Rxvt*scrollBar:    false
 Rxvt*saveLines:    32767
 
-! call with urxvt -fn '<fontstring>' to get utf-8
-!urxvt.boldFont: -misc-fixed-bold-r-normal--13-120-75-75-c-80-iso8859-1
-Rxvt*boldFont: -misc-fixed-bold-r-normal--13-120-75-75-c-80-iso10646-1
+
+Rxvt*boldFont: xft:DejaVuSansMono:style=bold:size=7
 Rxvt*geometry: 100x31
 Rxvt*termName: rxvt
 
-Rxvt*cutchars: `"()'*<>[]{|}
 Rxvt*perl-lib:         /usr/lib/urxvt/perl/
 Rxvt*perl-ext-common:  default,matcher
 Rxvt*matcher.button:   1

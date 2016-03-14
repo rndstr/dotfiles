@@ -6,7 +6,7 @@ ZSH_FILES := $(shell find zsh/ -type f)
 VIM_FILES := $(shell find vim/rc.d/ -type f)
 
 # Further dotfiles. If filename-HOSTNAME exists it takes precedence over default.
-SINGLE_FILES = gitconfig screenrc dir_colors Xmodmap Xdefaults xbindkeysrc
+SINGLE_FILES = gitconfig screenrc dir_colors Xmodmap Xresources xbindkeysrc
 
 
 # will be backed up
