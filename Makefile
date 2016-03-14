@@ -49,6 +49,7 @@ install: $(DEST_FILES) backup-active
 	$(MAKE) install-zsh
 	$(MAKE) install-vim
 	$(MAKE) install-single
+	$(MAKE) install-autolink
 
 install-bash: $(BASH_FILES)
 	ln -sf $(DOTFILES_DIR)/bash/bashrc.sh ~/.bashrc
