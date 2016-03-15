@@ -4,6 +4,3 @@
 [submodule "zsh/git-prompt"]
 	path = zsh/git-prompt
 	url = git://github.com/olivierverdier/zsh-git-prompt.git
-[submodule "powerline"]
-	path = powerline
-	url = https://github.com/powerline/powerline.git
