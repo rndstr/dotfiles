@@ -6,29 +6,30 @@ Xft.antialias: 1
 Xft.rgba: rgb
 
 ! copy selected text into both bufers
-Rxvt*VT100.translations: #override <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0)
+URxvt.VT100.translations: #override <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0)
 
-Rxvt*background: #000000
-Rxvt*foreground: #dddddd
-Rxvt*transparent: true
-Rxvt*shading: 23
-Rxvt*fading: 10
-Rxvt*font: xft:Hack:size=7,-*-unifont-*-*-*-*-*-*-*-*-*-*-*-*
-Rxvt*boldFont: xft:Hack:style=bold:size=7
-Rxvt*cutchars: "()*,<>[]{}|''"
-Rxvt*autoWrap: true
-Rxvt*cursorColor: #fbe0a3
-Rxvt*jumpScroll: true
-Rxvt*multiScroll: true
-Rxvt*underLine: true
-Rxvt*scrollBar: false
-Rxvt*saveLines: 32767
-Rxvt*geometry: 100x31
-Rxvt*termName: rxvt
-Rxvt*perl-lib: /usr/lib/urxvt/perl/
-Rxvt*perl-ext-common: default,matcher
-Rxvt*matcher.button: 1
-Rxvt*urlLauncher: xdg-open
+URxvt.background: #000000
+URxvt.foreground: #dddddd
+URxvt.transparent: true
+URxvt.shading: 23
+URxvt.fading: 10
+URxvt.font: xft:Hack:size=7,xft:Inconsolata for Powerline:size=7,-*-unifont-*-*-*-*-*-*-*-*-*-*-*-*
+URxvt.boldFont: xft:Hack:bold:size=7,xft:Inconsolata for Powerline:bold:size=7
+URxvt.cutchars: "()*,<>[]{}|''"
+URxvt.autoWrap: true
+URxvt.cursorColor: #fbe0a3
+URxvt.jumpScroll: true
+URxvt.multiScroll: true
+URxvt.underLine: true
+URxvt.scrollBar: false
+URxvt.saveLines: 32767
+URxvt.geometry: 100x31
+URxvt.termName: rxvt
+
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: chromium
+URxvt.matcher.button: 1
+URxvt.matcher.rend.0: Uline fg5
 
 Xcursor.theme: Vanilla-DMZ-AA
 
