@@ -28,20 +28,20 @@ return {
 --    fg_urgent     = "#111111",
 
     bg_normal     = "#000000",
-    bg_focus      = "#e74c3c",
+    bg_focus      = "#ffffff",
     bg_urgent     = "#ffdd00",
 
     fg_normal     = "#eeeeff",
-    fg_focus      = "#222222",
+    fg_focus      = "#000000",
     fg_urgent     = "#111111",
 
     fg_widget_value_important = "#444444",
     fg_widget_value = "#ff0000",
     fg_widget_clock = "#ff0000",
 
-    border_width  = 5,
-    border_normal = "#222222",
-    border_focus  = "#e74c3c",
+    border_width  = 3,
+    border_normal = "#000000",
+    border_focus  = "#ffffff",
 
     taglist_squares_sel    = "~/.config/awesome/themes/rndstr/tasklist_f.png",
     taglist_squares_unsel  = "~/.config/awesome/themes/rndstr/tasklist_u.png",
