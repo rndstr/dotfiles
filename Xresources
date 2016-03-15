@@ -13,7 +13,7 @@ Rxvt*foreground: #dddddd
 Rxvt*transparent: true
 Rxvt*shading: 23
 Rxvt*fading: 10
-Rxvt*font: xft:DejaVuSansMono:size=7
+Rxvt*font: xft:DejaVuSansMono:size=7,-*-unifont-*-*-*-*-*-*-*-*-*-*-*-*
 Rxvt*cutchars: "()*,<>[]{}|''"
 Rxvt*autoWrap: true
 Rxvt*cursorColor: #fbe0a3
