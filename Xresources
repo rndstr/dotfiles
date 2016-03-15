@@ -13,7 +13,8 @@ Rxvt*foreground: #dddddd
 Rxvt*transparent: true
 Rxvt*shading: 23
 Rxvt*fading: 10
-Rxvt*font: xft:DejaVuSansMono:size=7,-*-unifont-*-*-*-*-*-*-*-*-*-*-*-*
+Rxvt*font: xft:Hack:size=7,-*-unifont-*-*-*-*-*-*-*-*-*-*-*-*
+Rxvt*boldFont: xft:Hack:style=bold:size=7
 Rxvt*cutchars: "()*,<>[]{}|''"
 Rxvt*autoWrap: true
 Rxvt*cursorColor: #fbe0a3
@@ -22,7 +23,6 @@ Rxvt*multiScroll: true
 Rxvt*underLine: true
 Rxvt*scrollBar: false
 Rxvt*saveLines: 32767
-Rxvt*boldFont: xft:DejaVuSansMono:style=bold:size=7
 Rxvt*geometry: 100x31
 Rxvt*termName: rxvt
 Rxvt*perl-lib: /usr/lib/urxvt/perl/
