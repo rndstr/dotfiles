@@ -13,8 +13,8 @@ URxvt.foreground: #dddddd
 URxvt.transparent: true
 URxvt.shading: 23
 URxvt.fading: 10
-URxvt.font: xft:Hack:size=7,xft:Inconsolata for Powerline:size=7,-*-unifont-*-*-*-*-*-*-*-*-*-*-*-*
-URxvt.boldFont: xft:Hack:bold:size=7,xft:Inconsolata for Powerline:bold:size=7
+URxvt.font: xft:Hack:size=8,xft:Inconsolata for Powerline:size=8,-*-unifont-*-*-*-*-*-*-*-*-*-*-*-*
+URxvt.boldFont: xft:Hack:bold:size=8,xft:Inconsolata for Powerline:bold:size=8
 URxvt.cutchars: "()*,<>[]{}|''"
 URxvt.autoWrap: true
 URxvt.cursorColor: #fbe0a3
