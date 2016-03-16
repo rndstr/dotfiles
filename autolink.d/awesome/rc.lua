@@ -45,15 +45,13 @@ end
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
 -- beautiful.init("/usr/share/awesome/themes/sky/theme.lua")
-beautiful.init("/home/rndstr/.config/awesome/themes/rndstr/rndstr.lua")
+beautiful.init("/home/rndstr/.config/awesome/themes/rndstr/theme.lua")
 for s = 1, screen.count() do
 	gears.wallpaper.maximized(beautiful.wallpaper, s, false)
 end
 
 -- This is used later as the default terminal and editor to run.
-terminal = "urxvt -e screen -U"
-editor = os.getenv("EDITOR") or "nano"
-editor_cmd = terminal .. " -e " .. editor
+terminal = "urxvt -e bash -c \"exec tmux\""
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -81,7 +79,7 @@ local layouts =
 -- {{{ Tags
 -- Define a tag table which hold all screen tags.
 tags = {
-  names = { "1", "2", "3", "4", "5", 6, 7, 8, 9 },
+  names = { "1", "2", "3", "4", "5"},
   layout = {
     layouts[3],
     layouts[1],
@@ -103,8 +101,6 @@ end
 -- {{{ Menu
 -- Create a laucher widget and a main menu
 myawesomemenu = {
-   { "manual", terminal .. " -e man awesome" },
-   { "edit config", editor_cmd .. " " .. awesome.conffile },
    { "restart", awesome.restart },
    { "quit", awesome.quit }
 }
@@ -136,10 +132,17 @@ vicious.register(vcpu, vicious.widgets.cpu, function (widget, args)
 end)
 
 vthermal = wibox.widget.textbox()
-vicious.register(vthermal, vicious.widgets.thermal, ' $1C', 2, 'thermal_zone0')
+vicious.register(vthermal, vicious.widgets.thermal, function (widget, args)
+    return string.format(" %2dC", math.floor(args[1]))
+end, 3, 'thermal_zone0')
+
+vfreq = wibox.widget.textbox()
+vicious.register(vfreq, vicious.widgets.cpufreq, function (widget, args)
+    return string.format(" %04d", math.floor(args[1]))
+end, 3, 'cpu0')
 
 vbat = wibox.widget.textbox()
-vicious.register(vbat, vicious.widgets.bat, '$1$2% ($3)', 2, 'BAT0')
+vicious.register(vbat, vicious.widgets.bat, '$1$2% ($3)', 10, 'BAT0')
 
 vmem = wibox.widget.textbox()
 vicious.register(vmem, vicious.widgets.mem, function (widget, args)
@@ -227,11 +230,11 @@ for s = 1, screen.count() do
 
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
-    right_layout:add(separator)
     right_layout:add(vbat)
     right_layout:add(separator)
     right_layout:add(vcpu)
     right_layout:add(vthermal)
+    right_layout:add(vfreq)
     right_layout:add(separator)
     right_layout:add(vmem)
     --right_layout:add(separator)
@@ -452,5 +455,5 @@ end
 run_once("sudo", "nm-applet", "")
 run_once("sudo", "blueman-applet", "")
 run_once("", "pasystray", "")
-run_once("", "batterymon", "")
+run_once("", "batterymon", "-t numix")
 --run_once("", "google-musicmanager", "")
