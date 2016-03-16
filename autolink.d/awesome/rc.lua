@@ -66,8 +66,8 @@ local layouts =
     awful.layout.suit.max,
     awful.layout.suit.floating,
     awful.layout.suit.tile,
-    awful.layout.suit.tile.top,
     awful.layout.suit.fair,
+--    awful.layout.suit.tile.top,
 --    awful.layout.suit.fair.horizontal,
     awful.layout.suit.spiral,
 --    awful.layout.suit.spiral.dwindle,
@@ -84,12 +84,8 @@ tags = {
     layouts[3],
     layouts[1],
     layouts[2],
-    layouts[3],
-    layouts[3],
-    layouts[3],
-    layouts[3],
-    layouts[3],
-    layouts[3]
+    layouts[4],
+    layouts[4]
   }
 }
 for s = 1, screen.count() do
@@ -100,18 +96,15 @@ end
 
 -- {{{ Menu
 -- Create a laucher widget and a main menu
-myawesomemenu = {
+awesomemenu = {
    { "restart", awesome.restart },
    { "quit", awesome.quit }
 }
 
-mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
+mymainmenu = awful.menu({ items = { { "awesome", awesomemenu, beautiful.awesome_icon },
                                     { "open terminal", terminal }
                                   }
                         })
-
-mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
-                                     menu = mymainmenu })
 -- }}}
 
 -- {{{ Wibox
@@ -126,6 +119,8 @@ separator:set_text(" • ")
 --    return string.format("%4dK%4dK", args["{wlan0 up_kb}"], args["{wlan0 down_kb}"])
 --end)
 
+vcpuicon = wibox.widget.imagebox()
+vcpuicon:set_image(beautiful.widget_cpu)
 vcpu = wibox.widget.textbox()
 vicious.register(vcpu, vicious.widgets.cpu, function (widget, args)
     return string.format("%02d:%02d:%02d:%02d", args[1], args[2], args[3], args[4])
@@ -141,27 +136,29 @@ vicious.register(vfreq, vicious.widgets.cpufreq, function (widget, args)
     return string.format(" %04d", math.floor(args[1]))
 end, 3, 'cpu0')
 
+vbaticon = wibox.widget.imagebox()
+vbaticon:set_image(beautiful.widget_bat)
 vbat = wibox.widget.textbox()
 vicious.register(vbat, vicious.widgets.bat, '$1$2% ($3)', 10, 'BAT0')
 
+vmemicon = wibox.widget.imagebox()
+vmemicon:set_image(beautiful.widget_mem)
 vmem = wibox.widget.textbox()
 vicious.register(vmem, vicious.widgets.mem, function (widget, args)
     return string.format("%4d/%d", args[2], args[3])
 end)
 
 
--- Create a textclock widget
-mytextclock = awful.widget.textclock('%Y%m%d %H:%M ')
-
--- Create a systray
---mysystray = wibox.widget.systray()
+vclockicon = wibox.widget.imagebox()
+vclockicon:set_image(beautiful.widget_date)
+vclock = awful.widget.textclock('%Y%m%d %H:%M ')
 
 -- Create a wibox for each screen and add it
 mywibox = {}
-mypromptbox = {}
-mylayoutbox = {}
-mytaglist = {}
-mytaglist.buttons = awful.util.table.join(
+promptbox = {}
+layoutbox = {}
+taglist = {}
+taglist.buttons = awful.util.table.join(
                     awful.button({ }, 1, awful.tag.viewonly),
                     awful.button({ modkey }, 1, awful.client.movetotag),
                     awful.button({ }, 3, awful.tag.viewtoggle),
@@ -203,47 +200,43 @@ mytasklist.buttons = awful.util.table.join(
                                           end))
 
 for s = 1, screen.count() do
+    taglist[s] = awful.widget.taglist(s, awful.widget.taglist.filter.all, taglist.buttons)
+
     -- Create a promptbox for each screen
-    mypromptbox[s] = awful.widget.prompt()
+    promptbox[s] = awful.widget.prompt()
+    --
+    -- Create a tasklist widget
+    mytasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, mytasklist.buttons)
+
     -- Create an imagebox widget which will contains an icon indicating which layout we're using.
-    -- We need one layoutbox per screen.
-    mylayoutbox[s] = awful.widget.layoutbox(s)
-    mylayoutbox[s]:buttons(awful.util.table.join(
+    layoutbox[s] = awful.widget.layoutbox(s)
+    layoutbox[s]:buttons(awful.util.table.join(
                            awful.button({ }, 1, function () awful.layout.inc(layouts, 1) end),
                            awful.button({ }, 3, function () awful.layout.inc(layouts, -1) end),
                            awful.button({ }, 4, function () awful.layout.inc(layouts, 1) end),
                            awful.button({ }, 5, function () awful.layout.inc(layouts, -1) end)))
-    -- Create a taglist widget
-    mytaglist[s] = awful.widget.taglist(s, awful.widget.taglist.filter.all, mytaglist.buttons)
-
-    -- Create a tasklist widget
-    mytasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, mytasklist.buttons)
-
-    -- Create the wibox
-    mywibox[s] = awful.wibox({ position = "top", screen = s })
 
     -- Widgets that are aligned to the left
     local left_layout = wibox.layout.fixed.horizontal()
-    left_layout:add(mylauncher)
-    left_layout:add(mytaglist[s])
-    left_layout:add(mypromptbox[s])
+    left_layout:add(taglist[s])
+    left_layout:add(promptbox[s])
 
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
+    right_layout:add(vbaticon)
     right_layout:add(vbat)
-    right_layout:add(separator)
+    right_layout:add(vcpuicon)
     right_layout:add(vcpu)
     right_layout:add(vthermal)
     right_layout:add(vfreq)
-    right_layout:add(separator)
+    right_layout:add(vmemicon)
     right_layout:add(vmem)
     --right_layout:add(separator)
     --right_layout:add(netwidget)
-    right_layout:add(separator)
+    right_layout:add(vclockicon)
+    right_layout:add(vclock)
+    right_layout:add(layoutbox[s])
     if s == 1 then right_layout:add(wibox.widget.systray()) end
-    right_layout:add(separator)
-    right_layout:add(mytextclock)
-    right_layout:add(mylayoutbox[s])
 
     -- Now bring it all together (with the tasklist in the middle)
     local layout = wibox.layout.align.horizontal()
@@ -251,6 +244,8 @@ for s = 1, screen.count() do
     layout:set_middle(mytasklist[s])
     layout:set_right(right_layout)
 
+    -- Create the wibox
+    mywibox[s] = awful.wibox({ position = "top", screen = s })
     mywibox[s]:set_widget(layout)
 end
 -- }}}
@@ -313,12 +308,12 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
     -- Prompt
-    awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
+    awful.key({ modkey },            "r",     function () promptbox[mouse.screen]:run() end),
 
     awful.key({ modkey }, "x",
               function ()
                   awful.prompt.run({ prompt = "Run Lua code: " },
-                  mypromptbox[mouse.screen].widget,
+                  promptbox[mouse.screen].widget,
                   awful.util.eval, nil,
                   awful.util.getdir("cache") .. "/history_eval")
               end),

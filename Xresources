@@ -23,7 +23,7 @@ URxvt.multiScroll: true
 URxvt.underLine: true
 URxvt.scrollBar: false
 URxvt.saveLines: 32767
-URxvt.geometry: 100x31
+!URxvt.geometry: 100x31
 URxvt.termName: rxvt
 
 URxvt.perl-ext-common: default,matcher
