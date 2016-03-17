@@ -82,8 +82,7 @@ install-single: $(SINGLE_FILES)
 	for i in $^; do \
 		if test -f $(DOTFILES_DIR)/$$i-$$HOSTNAME ; \
 		then ln -sf $(DOTFILES_DIR)/$$i-$$HOSTNAME ~/.$$i ; \
-		elif test -f $(DOTFILES_DIR)/$$i ; \
-		then ln -sf $(DOTFILES_DIR)/$$i ~/.$$i ; \
+		else ln -sf $(DOTFILES_DIR)/$$i ~/.$$i ; \
 		fi \
 	done
 
