@@ -3,6 +3,10 @@ while read -r line; do
     src=$(echo $line | cut -d " " -f 1)
     dst=$(echo $line | cut -d " " -f 2)
     [[ ! -d $(dirname $HOME/$dst) ]] && mkdir -p $(dirname $HOME/$dst)
-    echo "ln -s $HOME/.dotfiles/$src $HOME/$dst"
-    /usr/bin/ln -s $HOME/.dotfiles/$src $HOME/$dst
+    if [ -e $HOME/$dst ]; then
+        echo "file already exists: $HOME/$dst"
+    else
+        echo "ln -s $HOME/.dotfiles/$src $HOME/$dst"
+        /usr/bin/ln -s $HOME/.dotfiles/$src $HOME/$dst
+    fi
 done <$1
