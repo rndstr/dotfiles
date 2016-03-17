@@ -1,0 +1,44 @@
+#!/bin/sh
+steps=(20 100 300 500 700 852)
+battery=300
+max=${steps[-1]}
+path=/sys/class/backlight/intel_backlight/brightness
+
+if [ -z "$*" ]; then
+    cat $path
+    exit 0
+fi
+
+case "$*" in
+    battery)
+        echo -n $battery > $path
+        ;;
+    max)
+        echo -n $max > $path
+        ;;
+    up|down)
+        cur=$(cat $path)
+        echo $cur
+        prev=0
+        count=${#steps[*]}
+        for (( i=0; i <= $(( $count - 1 )); i++ )); do
+            if [ $cur -le ${steps[$i]} ]; then
+                break
+            fi
+        done
+        echo $i
+        if [ $* = "up" ]; then
+            i=$(($i + 1))
+        else
+            i=$(($i - 1))
+        fi
+        if [ $i -lt 0 ]; then
+            i=0
+        elif [ $i -ge $count ]; then
+            i=$(($count - 1))
+        fi
+        echo -n ${steps[$i]} > $path
+        ;;
+    *)
+        echo -n $* > $path
+esac
