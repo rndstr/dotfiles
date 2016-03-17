@@ -6,7 +6,7 @@ ZSH_FILES := $(shell find zsh/ -type f)
 VIM_FILES := $(shell find vim/rc.d/ -type f)
 
 # Further dotfiles. If filename-HOSTNAME exists it takes precedence over default.
-SINGLE_FILES = gitconfig screenrc dir_colors Xmodmap Xresources xbindkeysrc tmux.conf
+SINGLE_FILES = gitconfig screenrc dir_colors Xmodmap Xresources xbindkeysrc tmux.conf xinitrc
 
 
 # will be backed up
@@ -82,7 +82,8 @@ install-single: $(SINGLE_FILES)
 	for i in $^; do \
 		if test -f $(DOTFILES_DIR)/$$i-$$HOSTNAME ; \
 		then ln -sf $(DOTFILES_DIR)/$$i-$$HOSTNAME ~/.$$i ; \
-		else ln -sf $(DOTFILES_DIR)/$$i ~/.$$i ; \
+		elif test -f $(DOTFILES_DIR)/$$i ; \
+		then ln -sf $(DOTFILES_DIR)/$$i ~/.$$i ; \
 		fi \
 	done
 
