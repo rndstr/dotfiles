@@ -1,0 +1,7 @@
+"/home/rndstr/.dotfiles/bin/monitor-hotplug eDP1"
+    m:0x0 + c:152
+    XF86Explorer
+
+"lightscreen"
+    m:0x4 + c:107
+    Control + Print
