@@ -87,3 +87,5 @@ exit_handler () {
 trap exit_handler EXIT
 
 
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

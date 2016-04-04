@@ -48,3 +48,5 @@ zstyle :compinstall filename '/home/rndstr/.zshrc'
 
 # End of lines added by compinstall
 
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
