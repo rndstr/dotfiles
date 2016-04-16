@@ -1,26 +1,49 @@
 #!/bin/sh
-#
-# Stacks external monitors on top of the integrated screen
+# hidpi/mdpi support
 #
 # udev.rule:
 #   KERNEL=="card0", ACTION=="change", SUBSYSTEM=="drm", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/rndstr/.Xauthority", RUN+="/home/rndstr/.dotfiles/bin/monitor-hotplug"
 #
+# 1920x1200
+# xrandr --output eDP1 --auto --scale 1x1 --pos 0x1596 --output HDMI2 --auto --scale 1.33x1.33 --pos 0x0 --fb 2560x3036
+#
+# Ssee https://wiki.archlinux.org/index.php/HiDPI#Multiple_displays
 
-integrated=$*
-cmd="$(which xrandr) --output $integrated --auto"
-previous=$integrated
+# connected size
+INT=$(xrandr --current | sed 's/^\(.*\) connected.*$/\1/p;d' | grep -v '^DP' | head -n 1)
+int_w=`xrandr | sed 's/^'"${INT}"' [^0-9]* \([0-9]\+\)x.*$/\1/p;d'`
+int_h=`xrandr | sed 's/^'"${INT}"' [^0-9]* [0-9]\+x\([0-9]\+\).*$/\1/p;d'`
 
-IFS=$'\n'
-for l in $(xrandr | grep connected); do
-    output=${l%% *}
-    if [[ $output != $integrated ]]; then
-        if [[ $l == *"disconnected"* ]]; then
-            cmd="$cmd --output $output --off"
-        else
-            cmd="$cmd --output $output --auto --above $previous"
-            previous=$output
-        fi
-    fi
-done
+# disconnected size 
+EXT=`xrandr --current | sed 's/^\(.*\) connected.*$/\1/p;d' | grep -v '^eDP' | head -n 1`
+ext_w=$(xrandr | grep $EXT -A 1 | tail -n 1 | sed 's/^\s\+\([0-9]\+\)x.*$/\1/p;d')
+ext_h=$(xrandr | grep $EXT -A 1 | tail -n 1 | sed 's/^\s\+[0-9]\+x\([0-9]\+\).*$/\1/p;d')
 
-eval $cmd
+echo "found $INT=${int_w}x${int_h}"
+
+function calc() { echo "scale=3; $*" | bc -l; }
+
+cmd="--output $INT --auto"
+if [ -z $EXT ]; then
+    cmd="--output $INT --auto"
+    IFS=$'\n'
+    for d in $(xrandr | grep disconnected); do
+        OTHER=${d%% *}
+        cmd="$cmd --output $OTHER --off"
+    done
+elif [ $int_w -gt 2000 ]; then # hidpi
+    scale=$(calc "$int_w / $ext_w")
+    echo "found $EXT=${ext_w}x${ext_h}"
+    echo "hidpi, scale=$scale"
+
+    tot_h=$(calc "$int_h + ($ext_h * $scale)")
+    off_y=$(calc "$ext_h * $scale")
+    cmd="--output $INT --auto --pos 0x${off_y} --output $EXT --auto  --scale ${scale}x${scale} --pos 0x0 --fb ${int_w}x${tot_h}"
+else
+    echo "found $EXT=${ext_w}x${ext_h}"
+    echo 'mdpi'
+    cmd="--output $INT --auto --output $EXT --auto --above $INT"
+fi
+
+eval "xrandr $cmd"
+
