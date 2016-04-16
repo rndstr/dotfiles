@@ -21,7 +21,8 @@ ext_h=$(xrandr | grep $EXT -A 1 | tail -n 1 | sed 's/^\s\+[0-9]\+x\([0-9]\+\).*$
 
 echo "found $INT=${int_w}x${int_h}"
 
-function calc() { echo "scale=3; $*" | bc -l; }
+function calcf() { echo "scale=3; $*" | bc -l; }
+function calci() { res=$(echo "scale=3; $*" | bc -l); printf %.0f $res; }
 
 cmd="--output $INT --auto"
 if [ -z $EXT ]; then
@@ -32,12 +33,12 @@ if [ -z $EXT ]; then
         cmd="$cmd --output $OTHER --off"
     done
 elif [ $int_w -gt 2000 ]; then # hidpi
-    scale=$(calc "$int_w / $ext_w")
+    scale=$(calcf "$int_w / $ext_w")
     echo "found $EXT=${ext_w}x${ext_h}"
     echo "hidpi, scale=$scale"
 
-    tot_h=$(calc "$int_h + ($ext_h * $scale)")
-    off_y=$(calc "$ext_h * $scale")
+    off_y=$(calci "$ext_h * $scale")
+    tot_h=$(calci "$int_h + $off_y")
     cmd="--output $INT --auto --pos 0x${off_y} --output $EXT --auto  --scale ${scale}x${scale} --pos 0x0 --fb ${int_w}x${tot_h}"
 else
     echo "found $EXT=${ext_w}x${ext_h}"
