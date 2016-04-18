@@ -5,3 +5,7 @@
 "lightscreen"
     m:0x40 + c:107
     Mod4 + Print
+
+"amixer -D pulse set Master toggle"
+    m:0x0 + c:121
+    XF86AudioMute
