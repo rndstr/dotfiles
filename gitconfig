@@ -31,6 +31,7 @@
 [alias]
   a = commit --all
   ap = add --patch
+  ca = commit --amend
   cp = checkout --patch
   co = checkout
   pr = pull --rebase
