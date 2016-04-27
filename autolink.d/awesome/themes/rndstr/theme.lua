@@ -79,7 +79,7 @@ theme.widget_wifi   = theme.icons .. "/wifi.png"
 theme.titlebar_close_button_normal              = theme.default .. "/titlebar/close_normal.png"
 theme.titlebar_close_button_focus               = theme.default .. "/titlebar/close_focus.png"
 
-theme.wallpaper = theme.theme .. "/wallpaper/palette.png"
+theme.wallpaper = theme.theme .. "/wallpaper/nyc.jpg"
 
 function file_exists(name)
    local f=io.open(name,"r")
