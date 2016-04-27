@@ -26,14 +26,13 @@ function calci() { res=$(echo "scale=3; $*" | bc -l); printf %.0f $res; }
 
 cmd="--output $INT --auto"
 if [ -z $EXT ]; then
-    cmd="--output $INT --auto"
     IFS=$'\n'
     for d in $(xrandr | grep disconnected); do
         OTHER=${d%% *}
         cmd="$cmd --output $OTHER --off"
     done
 elif [ $int_w -gt 2000 ]; then # hidpi
-    scale=$(calcf "$int_w / $ext_w")
+    scale=$(calcf "$int_w / $ext_w") #dimension ratio would probably make more sense
     echo "found $EXT=${ext_w}x${ext_h}"
     echo "hidpi, scale=$scale"
 
