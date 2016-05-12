@@ -17,6 +17,7 @@ alias du="du -sh"
 
 alias grep="grep --color=auto"
 alias more="more -r" # colorize
+alias cal="cal -m"
 
 alias h="history -1000 | grep -i" # or use ctrl-r
 alias hclear='history -c; clear'
@@ -44,6 +45,7 @@ gr() { grep -Ri $* *; }
 alias eptlive="mplayer http://stream-eng.pokerstars.tv/pxpkrlive-live/pokerstarslive_eng_500k"
 alias reptlive="mplayer http://stream-eng.pokerstars.tv/pxpkrlive-live/pokerstarslive_eng_500k -dumpstream -dumpfile"
 
+alias weather="curl wttr.in/Zurich"
 
 alias rake="noglob rake"
 
