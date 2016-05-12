@@ -38,7 +38,7 @@ elif [ $int_w -gt 2000 ]; then # hidpi
 
     off_y=$(calci "$ext_h * $scale")
     tot_h=$(calci "$int_h + $off_y")
-    cmd="--output $INT --auto --pos 0x${off_y} --output $EXT --auto  --scale ${scale}x${scale} --pos 0x0 --fb ${int_w}x${tot_h}"
+    cmd="--output $INT --auto --pos 0x${off_y} --output $EXT --auto --scale ${scale}x${scale} --pos 0x0 --fb ${int_w}x${tot_h}"
 else
     echo "found $EXT=${ext_w}x${ext_h}"
     echo 'mdpi'
