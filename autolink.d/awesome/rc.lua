@@ -81,9 +81,9 @@ local layouts =
 tags = {
   names = { "1", "2", "3", "4", "5"},
   layout = {
-    layouts[3],
     layouts[1],
-    layouts[2],
+    layouts[1],
+    layouts[1],
     layouts[4],
     layouts[4]
   }
