@@ -6,6 +6,7 @@
   whitespace = trailing-space,space-before-tab,cr-at-eol,tab-in-indent
   editor = vim
   excludesfile = '~/.gitignore'
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [merge]
   tool = gvimdiff
 [branch]
@@ -62,5 +63,5 @@
   smui = submodule update --init
   rbi = rebase -i HEAD~2
 
-[interactive]
-	diffFilter = diff-highlight
+[commit]
+	verbose = true
