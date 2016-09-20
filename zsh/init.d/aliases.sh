@@ -28,11 +28,8 @@ alias vi='vim -X -p'
 # set $HOME of target user
 alias sudo="sudo -H"
 
-alias s="screen"
-alias ss="screen -S "
-alias sl="screen -list"
-alias sr="screen -d -r"
-alias sx="screen -x"
+alias t="tmux"
+alias ta="tmux attach -t"
 
 alias psg="ps -awef |grep"
 alias diff="colordiff -bBur"
