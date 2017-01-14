@@ -1,0 +1,34 @@
+[default]
+#monitoraspect=16:9
+
+vf=screenshot
+
+stop-xscreensaver=1
+
+#ao=alsa:device=hw=0.3
+ao=pulse
+
+# vobsubs
+slang=en
+spuaa=4 #high quality aa for dvd/vobsub
+
+# text based
+sub-fuzziness=2 #load all in folder
+subfont-encoding=unicode
+unicode=yes
+utf8=yes
+ffactor=1
+subpos=100
+subalign=0 #bottom
+subfont-autoscale=1 #proportional to movie width
+subfont-blur=2.0 #radious
+subfont-outline=2.0 #thickness
+subfont-text-scale=8
+subfont-osd-scale=5
+ass=yes
+
+# audio
+softvol=1
+alang=eng,en,eng
+
+
