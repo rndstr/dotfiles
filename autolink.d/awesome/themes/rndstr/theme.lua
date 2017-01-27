@@ -7,7 +7,7 @@ theme.icons = os.getenv("HOME") .. "/.config/awesome/themes/rndstr/icons"
 theme.default = "/usr/share/awesome/themes/default"
 theme.theme = os.getenv("HOME") .. "/.config/awesome/themes/rndstr"
 
-theme.font          = "Hack 16"
+theme.font          = "Hack 8"
 
 theme.bg_normal     = "#000000"
 theme.fg_normal     = "#ffffff"
