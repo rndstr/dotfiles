@@ -37,6 +37,7 @@
   cp = checkout --patch
   co = checkout
   pr = pull --rebase
+  pf = pull -f
   br = branch -v
   ci = commit
   s = status -sb
