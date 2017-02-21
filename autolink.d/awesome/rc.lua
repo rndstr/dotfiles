@@ -593,7 +593,7 @@ function run_once(pre, prg, params)
   awful.spawn("pgrep -x " .. prg .. " || (" .. pre .. " " .. prg .. " " .. params .. ")")
 end
 
-run_once("sudo", "nm-applet", "")
+run_once("", "nm-applet", "")
 run_once("sudo", "blueman-applet", "")
 run_once("", "pasystray", "")
 run_once("", "batterymon", "-t numix")
