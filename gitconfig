@@ -63,6 +63,7 @@
   rc = rebase --continue
   smui = submodule update --init
   rbi = rebase -i HEAD~2
+  rod = rebase origin/develop
 
 [commit]
 	verbose = true
