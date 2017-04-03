@@ -60,11 +60,12 @@
   pum = !"git fetch -v origin; git fetch -v upstream; git merge upstream/master"
   pur = !"git fetch -v origin; git fetch -v upstream; git rebase upstream/master"
   puh = push origin HEAD
-  pft = push --folow-tags
+  pft = push --follow-tags
   rc = rebase --continue
   smui = submodule update --init
   rbi = rebase -i HEAD~2
   rod = rebase origin/develop
+  mnf = merge --no-ff
 
 [commit]
 	verbose = true
