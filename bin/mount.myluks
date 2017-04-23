@@ -1,0 +1,80 @@
+#!/bin/sh
+# https://stefanchrist.eu/blog/2013_10_26/LUKS%20mount%20helper%20script.xhtml
+#
+# install:
+#
+#     $ sudo ln -sf /home/rndstr/.dotfiles/bin/mount.myluks /sbin/mount.myluks
+#     # set up /etc/fstab
+#     $ mount /mnt/usbdisk
+#
+#
+# Author:  Christ Stefan
+# E-Mail:  contact@stefanchrist.eu
+# Date:    2013 Oct 26
+# License: CC0 1.0 Universal
+#          https://creativecommons.org/publicdomain/zero/1.0/
+#          (summary and full text)
+# Version: 1.0
+
+# Documentation:
+
+# Put this script into the file
+# /sbin/mount.myluks
+# and use 'myluks' as the filesystem type in /etc/fstab.
+# A detailed example follows:
+
+# Example line in /etc/fstab:
+# /dev/disk/by-id/ata-xx-part1	/mnt/usbdisk	myluks  name=disk,noauto,type=btrfs    0 2
+
+# Explanation:
+# "/dev/disk/by-id/ata-xx-part1" is the static identifier for the usbdrive
+#      "-part1" is the first partition on the usbdrive
+# "/mnt/usbdisk" is the destination mountpoint for the filesystem
+# "myluks" is the helper script. The mount command to call this file
+#       "/sbin/mount.myluks" to mount the filesystem
+# "name=disk,noauto,type=btrfs" are the options for the filesystem
+#       see the manpages of mount and the filesystem for a complete list of
+#       possible options.
+#       BUT: 'name=disk' and 'type=btfs' are special
+#       This script will use them to perform the real-mount operation
+
+
+# Parsing of commandline arguments
+# - the regular expression tries to be as general as possible. You can use any
+#   printable character for the name and type parameter.
+#   except: newline, space, tab and comma characters
+#   because these are special when mount parses the fstab file.
+
+# egrep -e '[[:alnum:][:space:]!-+.-\-]*'
+TYPE=`echo $4 | egrep "type=([[:alnum:][:space:]!-+.-\-]*)(,|$)" -o | sed 's/^type=//g' | sed 's/,$//g' `
+NAME=`echo $4 | egrep "name=([[:alnum:][:space:]!-+.-\-]*)(,|$)" -o | sed 's/^name=//g' | sed 's/,$//g' `
+OPTIONS=`echo $4 | sed 's/name=[[:alnum:][:space:]!-+.-\-]*//g' |sed 's/type=[[:alnum:][:space:]!-+.-\-]*//g' | sed -r 's/,+/,/g' | sed -r 's/^,+//g' | sed -r 's/,+$//g' `
+
+# disable these comments for debugging
+#echo debug: raw "\"$*\""
+#echo debug: name "\"$NAME\"" type "\"$TYPE\"" options "\"$OPTIONS\""
+
+# check the arguments
+if [ "$NAME" == "" ]; then
+	# ABORT no name
+	echo "No name-parameter in fstab. Read $0 for help.";
+	exit 1;
+fi
+if [ "$TYPE" ==  "" ]; then
+	echo "No type-parameter in fstab. Read $0 for help."
+	exit 1;
+fi
+
+# mount the luks container to /dev/mapper/$NAME
+cryptsetup open --type luks "$1" "$NAME"
+
+if [ "$?" == "0" ]; then
+	# mount the actual filesystem
+	mount /dev/mapper/"$NAME" "$2" -t "$TYPE" $3 "$OPTIONS" || cryptsetup close --type luks "$NAME"
+    echo
+    echo "-- when done:"
+    echo "umount /dev/mapper/${NAME}"
+    echo "cryptsetup close --type luks ${NAME}"
+else
+	echo Cannot mount "$2": cryptsetup couldn\'t mount the device, errorcode="$?"
+fi
