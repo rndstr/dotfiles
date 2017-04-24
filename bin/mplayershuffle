@@ -3,6 +3,6 @@
 # requires app-misc/rl
 #
 temp=$(mktemp mplayershuffle.XXXXXXXXXX)
-lsre -ld $PWD 10 | rl > $temp
+lsre -ld $PWD 10 | shuffle > $temp
 mplayer -quiet -playlist $temp $*
 rm $temp
