@@ -589,13 +589,3 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
-function run_once(pre, prg, params)
-  awful.spawn("pgrep -x " .. prg .. " || (" .. pre .. " " .. prg .. " " .. params .. ")")
-end
-
-run_once("", "nm-applet", "")
-run_once("sudo", "blueman-applet", "")
-run_once("", "pasystray", "")
-run_once("", "batterymon", "-t numix")
---run_once("", "google-musicmanager", "")
-
