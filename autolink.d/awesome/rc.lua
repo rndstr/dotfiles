@@ -131,7 +131,7 @@ end)
 vthermal = wibox.widget.textbox()
 vicious.register(vthermal, vicious.widgets.thermal, function (widget, args)
     return string.format(" %2dC", math.floor(args[1]))
-end, 3, 'thermal_zone0')
+end, 3, 'thermal_zone1')
 
 vfreq = wibox.widget.textbox()
 vicious.register(vfreq, vicious.widgets.cpufreq, function (widget, args)
