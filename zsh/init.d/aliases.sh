@@ -17,6 +17,7 @@ alias du="du -sh"
 
 alias grep="grep --color=auto"
 alias more="more -r" # colorize
+alias less="less -r" # colorize
 
 alias h="history -1000 | grep -i" # or use ctrl-r
 alias hclear='history -c; clear'
