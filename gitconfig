@@ -69,3 +69,5 @@
 
 [commit]
 	verbose = true
+[includeIf "gitdir:~/weave/"]
+  path = ~/weave/.gitconfig
