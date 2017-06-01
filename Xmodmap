@@ -25,6 +25,8 @@ keycode 54 = c C copyright
 keycode 11 = 2 at twosuperior
 ! 3 ³
 keycode 12 = 3 numbersign threesuperior
+! Ξ 
+keycode 25 = w W U039E
 ! +-
 keycode  86 = KP_Add XF86_Next_VMode plusminus
 ! registered ®
@@ -35,6 +37,8 @@ keycode  33 = p P sterling
 keycode  58 = m M mu
 ! &times; ×
 keycode 53 = x X multiply
+! ✔
+keycode 29 = y Y U2714
 ! umlauts
 keycode 47 = semicolon colon odiaeresis
 keycode 48 = quoteright quotedbl adiaeresis
