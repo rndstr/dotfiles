@@ -1,7 +1,10 @@
 source ~/.zsh/git-prompt/zshrc.sh
 #PROMPT='%B%m%~%b$(git_super_status) %# '
+if [ -n "$DOCKER_HOST" ]; then
+    PROMPT_DOCKER="%{$fg[blue]%}⬢"
+fi
 PROMPT='%{$fg_bold[green]%}*%{$fg_bold[white]%}%M%{$fg_bold[green]%}*%{$reset_color%}%~
-%{$reset_color%}%n$(git_super_status) \$ '
+%{$reset_color%}%n$(git_super_status)$PROMPT_DOCKER%{$reset_color%} \$ '
 
 ZSH_THEME_GIT_PROMPT_PREFIX=
 ZSH_THEME_GIT_PROMPT_SUFFIX=
