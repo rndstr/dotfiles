@@ -1,7 +1,7 @@
 source ~/.zsh/git-prompt/zshrc.sh
 function docker_status {
     if [ -n "$DOCKER_HOST" ]; then
-        echo "%{$fg[blue]%}⬢"
+        echo " %{$fg[blue]%}⬢"
     fi
 }
 PROMPT='%{$fg_bold[green]%}*%{$fg_bold[white]%}%M%{$fg_bold[green]%}*%{$reset_color%}%~
