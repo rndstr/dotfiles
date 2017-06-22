@@ -4,7 +4,6 @@ alias audio.analog='pacmd set-card-profile 0 output:analog-stereo+input:analog-s
 
 alias pm="sudo pacman"
 alias doc="docker-compose"
-alias k="kubectl"
 
 alias ls="ls -Fh --color=auto" # default ls options
 alias la="ls -la"
