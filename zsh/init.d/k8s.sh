@@ -5,6 +5,10 @@ alias mk="minikube"
 alias k.gap="kubectl get pods --all-namespaces"
 alias k.wgap="watch kubectl get pods --all-namespaces"
 
+function kan() {
+    kubectl $* --all-namespaces
+}
+
 # usage: mk.start [args]
 function mk.start() {
     minikube start --memory=4096 $*
