@@ -33,6 +33,7 @@ alias t="tmux"
 alias ta="tmux attach -t"
 
 alias psg="ps -awef |grep"
+alias psf="pgrep -f"
 alias diff="colordiff -bBur"
 
 f() { find . -iname "*$1*"; }
