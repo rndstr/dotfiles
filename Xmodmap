@@ -3,15 +3,10 @@
 ! xmodmap -pke
 ! xmodmap -pm
 
-! swap ctrl and capslock
+! set capslock=control_l
 remove lock = Caps_Lock
-remove control = Control_L
-!keysym Control_L = Caps_Lock
 keysym Caps_Lock = Control_L
 add lock = Caps_Lock
-add control = Control_L
-
-
 
 
 ! AltGr for switching (3rd col in remapping)
