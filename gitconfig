@@ -48,6 +48,7 @@
   li = log --graph --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %Cgreen(%ci) %C(blue)%an%Creset'
   lc = log --graph --pretty=format:'%C(yellow)%d%Creset %s'
   lp = log -p
+  ls-subtrees = !"git log | grep git-subtree-dir | awk '{ print $2 }'"
   lw = whatchanged
   d = diff
   dc = diff --cached
