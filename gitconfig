@@ -65,7 +65,7 @@
   rc = rebase --continue
   smui = submodule update --init
   rbi = rebase -i HEAD~2
-  rod = rebase origin/develop
+  rbim = rebase -i origin/master
   mnf = merge --no-ff
 
 [commit]
