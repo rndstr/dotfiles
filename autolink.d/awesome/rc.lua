@@ -151,6 +151,7 @@ end)
 vclockicon = wibox.widget.imagebox()
 vclockicon:set_image(beautiful.widget_date)
 vclock = wibox.widget.textclock('%Y%m%d %H:%M ')
+vclockutc = wibox.widget.textclock('%H%MZ', 60, 'Z')
 
 
 -- Create a wibox for each screen and add it
@@ -253,7 +254,7 @@ awful.screen.connect_for_each_screen(function(s)
             vthermal,
             vfreq,
             vmemicon, vmem,
-            vclockicon, vclock,
+            vclockicon, vclock, vclockutc,
             s.mylayoutbox,
             wibox.widget.systray(),
         },
