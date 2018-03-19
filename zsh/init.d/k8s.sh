@@ -9,14 +9,14 @@ function kan() {
     kubectl $* --all-namespaces
 }
 
-# usage: mk.start [args]
-function mk.start() {
+# usage: mk.start4 [args]
+function mk.start4() {
     minikube start --memory=4096 $*
     minikube ssh -- sudo ln -s /hosthome/$USER /home/$USER
 }
 
-# usage: mk.start2 [args]
-function mk.start2() {
+# usage: mk.start [args]
+function mk.start() {
     minikube start $*
     minikube ssh -- sudo ln -s /hosthome/$USER /home/$USER
 }
