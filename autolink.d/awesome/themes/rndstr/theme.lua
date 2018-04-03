@@ -12,8 +12,8 @@ theme.font          = "Hack 8"
 theme.bg_normal     = "#000000"
 theme.fg_normal     = "#ffffff"
 
-theme.bg_focus      = "#74b8ef"
-theme.fg_focus      = "#ffffff"
+theme.bg_focus      = "#ffffff"
+theme.fg_focus      = "#444444"
 
 theme.bg_urgent     = "#d36265"
 theme.fg_urgent     = "#111111"
@@ -27,7 +27,7 @@ theme.fg_widget_clock = "#ff0000"
 
 theme.border_width  = 4
 theme.border_normal = "#000000"
-theme.border_focus  = "#74b8ef"
+theme.border_focus  = "#ffffff"
 theme.border_marked = "#91231c"
 
 theme.taglist_bg_focus = "#ffffff"
