@@ -3,12 +3,6 @@
 ! xmodmap -pke
 ! xmodmap -pm
 
-! set capslock=control_l
-remove lock = Caps_Lock
-keysym Caps_Lock = Control_L
-add lock = Caps_Lock
-
-
 ! AltGr for switching (3rd col in remapping)
 keycode 108 = Mode_switch
 

@@ -1,6 +1,7 @@
 xrdb -merge ~/.Xresources
 xmodmap $HOME/.Xmodmap
 xbindkeys
+setxkbmap -option "ctrl:swapcaps"
 #$HOME/.dotfiles/bin/synaptics-toggle
 $HOME/.dotfiles/bin/trackpoint
 
