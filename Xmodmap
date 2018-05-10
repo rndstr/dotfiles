@@ -45,6 +45,8 @@ keycode 61 = slash question 191
 
 ! en dash
 keycode 20 = minus underscore endash
+! em dash
+keycode 21 = equal plus emdash
 
 !keycode 179 = XF86AudioMedia
 !keycode 172 = XF86AudioPlay
