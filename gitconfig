@@ -30,6 +30,8 @@
 [diff]
   mnemonicprefix = true
 	compactionHeuristic = true
+[notes]
+    displayRef = *
 [alias]
   a = commit --all
   ap = add --patch
