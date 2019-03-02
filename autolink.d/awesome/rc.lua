@@ -107,8 +107,6 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 
 -- {{{ Wibar
 -- Create a textclock widget
-separator = wibox.widget.textbox()
-separator:set_text(" • ")
 --  Network usage widget
 -- Initialize widget
 -- Register widget
@@ -135,8 +133,6 @@ vicious.register(vfreq, vicious.widgets.cpufreq, function (widget, args)
     return string.format(" %04d", math.floor(args[1]))
 end, 3, 'cpu0')
 
-vbaticon = wibox.widget.imagebox()
-vbaticon:set_image(beautiful.widget_bat)
 vbat = wibox.widget.textbox()
 vicious.register(vbat, vicious.widgets.bat, '$1$2% ($3)', 10, 'BAT0')
 
@@ -209,6 +205,8 @@ local function set_wallpaper(s)
     end
 end
 
+sep = wibox.widget.textbox("│")
+
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", set_wallpaper)
 
@@ -249,12 +247,12 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            vbaticon, vbat,
-            vcpuicon, vcpu,
+            sep, vbat,
+            sep, vcpu,
             vthermal,
             vfreq,
-            vmemicon, vmem,
-            vclockicon, vclock, vclockutc,
+            sep, vmem,
+            sep, vclock, vclockutc,
             s.mylayoutbox,
             wibox.widget.systray(),
         },
