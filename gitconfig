@@ -1,6 +1,6 @@
 [user]
   email = roli@schilter.me
-  name = Roland Schilter
+  name = Roli Schilter
   editor = vim
 [core]
   whitespace = trailing-space,space-before-tab,cr-at-eol,tab-in-indent
