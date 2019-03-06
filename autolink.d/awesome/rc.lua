@@ -12,6 +12,21 @@ local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup").widget
 
+naughty.config.defaults.position = "bottom_right"
+naughty.config.defaults.icon_size = 100
+naughty.config.defaults.bg = "#fffee0"
+naughty.config.defaults.fg = "#444"
+naughty.config.defaults.padding = 0
+naughty.config.defaults.spacing = 0
+naughty.config.defaults.run = function(notification)
+    notification.die(naughty.notificationClosedReason.dismissedByUser)
+end
+
+naughty.config.notify_callback = function(args)
+    args.timeout = 5
+    return args
+end
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
