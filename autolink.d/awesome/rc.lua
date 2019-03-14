@@ -12,7 +12,7 @@ local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup").widget
 
-naughty.config.defaults.position = "bottom_right"
+naughty.config.defaults.position = "bottom_left"
 naughty.config.defaults.icon_size = 100
 naughty.config.defaults.bg = "#fffee0"
 naughty.config.defaults.fg = "#444"
