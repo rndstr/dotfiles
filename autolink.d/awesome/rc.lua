@@ -12,12 +12,15 @@ local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup").widget
 
-naughty.config.defaults.position = "bottom_left"
+naughty.config.defaults.position = "top_right"
 naughty.config.defaults.icon_size = 100
 naughty.config.defaults.bg = "#fffee0"
 naughty.config.defaults.fg = "#444"
 naughty.config.defaults.padding = 0
 naughty.config.defaults.spacing = 0
+naughty.config.defaults.margin = 0
+naughty.config.defaults.max_width = 450
+naughty.config.defaults.max_height = 150
 naughty.config.defaults.run = function(notification)
     notification.die(naughty.notificationClosedReason.dismissedByUser)
 end
