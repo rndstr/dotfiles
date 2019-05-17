@@ -37,7 +37,7 @@ alias psf="pgrep -f"
 alias diff="colordiff -bBur"
 
 f() { find . -iname "*$1*"; }
-g() { grep -Ri $* *; }
+g() { grep -Ri $* * 2>/dev/null; }
 
 alias eptlive="mplayer http://stream-eng.pokerstars.tv/pxpkrlive-live/pokerstarslive_eng_500k"
 alias reptlive="mplayer http://stream-eng.pokerstars.tv/pxpkrlive-live/pokerstarslive_eng_500k -dumpstream -dumpfile"
