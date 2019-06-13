@@ -1,0 +1,5 @@
+#!/bin/sh
+setxkbmap -option "ctrl:swapcaps"
+xmodmap /home/rndstr/.Xmodmap
+xset r rate 250 50 2>/dev/null #faster kbd
+
