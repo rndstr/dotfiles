@@ -1,3 +1,5 @@
 .idea
 *.iml
 .envrc
+.gradle
+.DS_Store

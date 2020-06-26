@@ -66,4 +66,4 @@ Xcursor.theme: Vanilla-DMZ-AA
 *color7:   #bebebe
 *color15:  #ffffff
 
-#include "/home/rndstr/.Xresources.local"
+!include "/home/rndstr/.Xresources.local"
