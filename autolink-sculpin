@@ -1,1 +1,2 @@
 autolink.d/awesome .config/awesome
+autolink.d/fontconfig/fonts.conf .config/fontconfig/fonts.conf
