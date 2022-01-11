@@ -74,3 +74,5 @@
 	verbose = true
 [includeIf "gitdir:~/weave/"]
   path = ~/weave/.gitconfig
+[init]
+	defaultBranch = main
