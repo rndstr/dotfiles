@@ -60,14 +60,14 @@
   sm = submodule
   unstage = reset HEAD --
   undo = reset --soft HEAD^
-  pum = !"git fetch -v origin; git fetch -v upstream; git merge upstream/master"
-  pur = !"git fetch -v origin; git fetch -v upstream; git rebase upstream/master"
+  pum = !"git fetch -v origin; git fetch -v upstream; git merge upstream/main"
+  pur = !"git fetch -v origin; git fetch -v upstream; git rebase upstream/main"
   puh = push origin HEAD
   pft = push --follow-tags
   rc = rebase --continue
   smui = submodule update --init
   rbi = rebase -i HEAD~2
-  rbim = rebase -i origin/master
+  rbim = rebase -i origin/main
   mnf = merge --no-ff
 
 [commit]
